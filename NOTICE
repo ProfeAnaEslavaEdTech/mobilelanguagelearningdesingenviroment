@@ -1,0 +1,64 @@
+MOBILE LANGUAGE LEARNING DESIGN CURRICULUM — OWNERSHIP & COPYRIGHT NOTICE
+========================================================================
+
+Copyright © 2026 Ana Eslava-Graterol (ProfeAnaEslavaEdTech).
+All Rights Reserved.
+
+Owner / Copyright holder : Ana Eslava-Graterol (ProfeAnaEslavaEdTech)
+Contact                  : profeanaeslava@gmail.com
+First published          : 2026
+
+WHAT THIS COVERS
+----------------
+This notice asserts copyright and proprietary rights over the owner's
+MOBILE LANGUAGE LEARNING DESIGN CURRICULUM (the "Curriculum") — the
+language-learning instructional-design system as a whole, including:
+  - docs/theoretical-framework.md          (the design theory framework)
+  - docs/curriculum-design-blueprint.md    (the curriculum design contract)
+  - language-passport/                      (authoring worksheet, engine, lessons)
+  - the pedagogical methodology, sequencing, and game mechanics they describe.
+
+HIERARCHY (please note)
+-----------------------
+  Mobile Language Learning Design Curriculum   ← the protected umbrella Work
+      └── "Language Passport"                   ← ONE lesson within the Curriculum
+              └── Barcelona — De Tapas Por La Rambla   (first build)
+
+"Language Passport" is a single lesson and an example application produced from
+the Curriculum. Copyright and proprietary rights apply to the Curriculum as a
+whole (framework and methodology) AND to each individual lesson.
+
+These works are proprietary. See the LICENSE file for the full terms
+(All Rights Reserved; no reproduction or derivative works without written
+permission).
+
+COPYRIGHT
+---------
+Copyright protection subsists automatically in these original works from the
+moment of their creation and fixation. The © notice above asserts, but is not
+required to create, that protection.
+
+TRADEMARK
+---------
+"Language Passport" and any names, characters, logos, and identities used for
+the Curriculum and its lessons are claimed as trademarks (™) of the owner.
+
+PATENT STATUS (please read)
+---------------------------
+No patent has been filed or granted for this Work, and it is NOT marked as
+patented or patent pending. A patent exists only after an application is filed
+with a patent office (e.g., USPTO / EPO) and examined — it cannot be created by
+a notice in source code. Marking work as patented or patent-pending without an
+actual filing is unlawful (false patent marking).
+
+If you wish to pursue patent protection for any inventive method embodied in the
+Curriculum, the recommended path is to consult a registered patent attorney and
+file a provisional application; once filed, this notice can be truthfully updated
+to "Patent Pending" with the application number.
+
+THIRD-PARTY & CO-AUTHORED MATERIALS
+-----------------------------------
+Third-party components (e.g., Pexels stock photos, Chart.js, web fonts, Canva
+exports) remain the property of their respective owners under their own
+licenses. Co-authored academic materials elsewhere in this repository remain the
+intellectual property of their respective authors and are not covered here.
