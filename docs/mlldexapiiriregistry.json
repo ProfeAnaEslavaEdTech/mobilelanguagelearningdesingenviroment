@@ -2,9 +2,9 @@
   "_copyright": "© 2026 Ana Eslava-Graterol. All Rights Reserved. Brand & website: profeanaeslava · GitHub: profeanaeslavaedtech · Universitat Politècnica de València. All information forms part of a PhD proposal. MLLDE methodology; 'Language Passport'™; 'Grace'. CEFR © Council of Europe; xAPI © ADL/IEEE; ESCO © European Union; IPA © International Phonetic Association. Cited as standards, not redistributed.",
   "_document": {
     "title": "MLLDE xAPI IRI Registry — unified identifiers for CEFR skills, subskills and measurement concepts",
-    "version": "0.2.0-draft",
-    "date": "2026-08-04",
-    "status": "Design registry (production draft). Next step: convert to a formal xAPI Profile (JSON-LD, conformsTo https://w3id.org/xapi/profiles#1.0) and validate at https://profiles.adlnet.gov before publication.",
+    "version": "0.8.3 (measurement) · 0.7.1 (content inventory)",
+    "date": "2026-10-23",
+    "status": "Early design draft. Superseded by the published canonical registry at https://profeanaeslavaedtech.github.io/mllde-xapi/ (measurement model v0.8.3). Content inventory versions separately at v0.7.1. See that page for the authoritative IRI set.",
     "researchFinding": "No official IRI vocabulary exists for CEFR skills, subskills or mediation (Council of Europe publishes descriptors as documents, not linked data). No language-learning xAPI profile exists in ADL's authored-profiles registry. Therefore MLLDE mints its own namespace, reusing established generic IRIs where semantics match, and records alignments to CEFR Companion Volume scales and ESCO/Europass as metadata."
   },
   "_namespacePolicy": {
@@ -42,13 +42,35 @@
     "note": "ESCO language skills are per-language UUID URIs referencing CEFR in prose; useful as alignment metadata for HR/admin reporting (persona 3), not usable as skill/subskill identifiers in statements."
   },
   "cefrLevels": [
-    { "iri": "https://w3id.org/mllde/cefr/level/pre-a1", "label": "Pre-A1", "note": "Introduced by the Companion Volume" },
-    { "iri": "https://w3id.org/mllde/cefr/level/a1", "label": "A1 — Basic user" },
-    { "iri": "https://w3id.org/mllde/cefr/level/a2", "label": "A2 — Basic user" },
-    { "iri": "https://w3id.org/mllde/cefr/level/b1", "label": "B1 — Independent user" },
-    { "iri": "https://w3id.org/mllde/cefr/level/b2", "label": "B2 — Independent user" },
-    { "iri": "https://w3id.org/mllde/cefr/level/c1", "label": "C1 — Proficient user" },
-    { "iri": "https://w3id.org/mllde/cefr/level/c2", "label": "C2 — Proficient user" }
+    {
+      "iri": "https://w3id.org/mllde/cefr/level/pre-a1",
+      "label": "Pre-A1",
+      "note": "Introduced by the Companion Volume"
+    },
+    {
+      "iri": "https://w3id.org/mllde/cefr/level/a1",
+      "label": "A1 — Basic user"
+    },
+    {
+      "iri": "https://w3id.org/mllde/cefr/level/a2",
+      "label": "A2 — Basic user"
+    },
+    {
+      "iri": "https://w3id.org/mllde/cefr/level/b1",
+      "label": "B1 — Independent user"
+    },
+    {
+      "iri": "https://w3id.org/mllde/cefr/level/b2",
+      "label": "B2 — Independent user"
+    },
+    {
+      "iri": "https://w3id.org/mllde/cefr/level/c1",
+      "label": "C1 — Proficient user"
+    },
+    {
+      "iri": "https://w3id.org/mllde/cefr/level/c2",
+      "label": "C2 — Proficient user"
+    }
   ],
   "skills": [
     {
@@ -86,149 +108,509 @@
   "subskillScales": {
     "_note": "One IRI per CEFR Companion Volume descriptor scale, grouped by MLLDE skill. 'cvScale' is the scale's name in the Companion Volume (2020) for traceability.",
     "listening": [
-      { "iri": "https://w3id.org/mllde/cefr/scale/overall-oral-comprehension", "cvScale": "Overall oral comprehension" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/understanding-interaction-between-others", "cvScale": "Understanding conversation between other people" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/listening-live-audience", "cvScale": "Understanding as a member of a live audience" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/listening-announcements-instructions", "cvScale": "Understanding announcements and instructions" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/listening-audio-media", "cvScale": "Understanding audio (or signed) media and recordings" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/audio-visual-comprehension", "cvScale": "Watching TV, film and video" }
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/overall-oral-comprehension",
+        "cvScale": "Overall oral comprehension"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/understanding-interaction-between-others",
+        "cvScale": "Understanding conversation between other people"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/listening-live-audience",
+        "cvScale": "Understanding as a member of a live audience"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/listening-announcements-instructions",
+        "cvScale": "Understanding announcements and instructions"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/listening-audio-media",
+        "cvScale": "Understanding audio (or signed) media and recordings"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/audio-visual-comprehension",
+        "cvScale": "Watching TV, film and video"
+      }
     ],
     "reading": [
-      { "iri": "https://w3id.org/mllde/cefr/scale/overall-reading-comprehension", "cvScale": "Overall reading comprehension" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/reading-correspondence", "cvScale": "Reading correspondence" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/reading-orientation", "cvScale": "Reading for orientation" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/reading-information-argument", "cvScale": "Reading for information and argument" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/reading-instructions", "cvScale": "Reading instructions" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/reading-leisure", "cvScale": "Reading as a leisure activity" }
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/overall-reading-comprehension",
+        "cvScale": "Overall reading comprehension"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/reading-correspondence",
+        "cvScale": "Reading correspondence"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/reading-orientation",
+        "cvScale": "Reading for orientation"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/reading-information-argument",
+        "cvScale": "Reading for information and argument"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/reading-instructions",
+        "cvScale": "Reading instructions"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/reading-leisure",
+        "cvScale": "Reading as a leisure activity"
+      }
     ],
     "speaking": [
-      { "iri": "https://w3id.org/mllde/cefr/scale/overall-spoken-production", "cvScale": "Overall oral production" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/monologue-describing-experience", "cvScale": "Sustained monologue: describing experience" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/monologue-giving-information", "cvScale": "Sustained monologue: giving information" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/monologue-putting-case", "cvScale": "Sustained monologue: putting a case" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/public-announcements", "cvScale": "Public announcements" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/addressing-audiences", "cvScale": "Addressing audiences" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/overall-spoken-interaction", "cvScale": "Overall oral interaction" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/understanding-interlocutor", "cvScale": "Understanding an interlocutor" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/conversation", "cvScale": "Conversation" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/informal-discussion", "cvScale": "Informal discussion (with friends)" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/formal-discussion", "cvScale": "Formal discussion (meetings)" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/goal-oriented-cooperation", "cvScale": "Goal-oriented co-operation" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/obtaining-goods-services", "cvScale": "Obtaining goods and services", "note": "The Voicemode service-encounter mission maps here." },
-      { "iri": "https://w3id.org/mllde/cefr/scale/information-exchange", "cvScale": "Information exchange" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/interviewing", "cvScale": "Interviewing and being interviewed" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/using-telecommunications", "cvScale": "Using telecommunications" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/overall-phonological-control", "cvScale": "Overall phonological control", "note": "CV replaced the 2001 phonology scale; anchor for GOP metrics." },
-      { "iri": "https://w3id.org/mllde/cefr/scale/sound-articulation", "cvScale": "Sound articulation", "note": "Anchor for per-phoneme (IPA) scoring — evidence tier 3 until GOP is built." },
-      { "iri": "https://w3id.org/mllde/cefr/scale/prosodic-features", "cvScale": "Prosodic features", "note": "Stress, rhythm, intonation — kept as separate metric lines, never folded into phoneme scores." }
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/overall-spoken-production",
+        "cvScale": "Overall oral production"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/monologue-describing-experience",
+        "cvScale": "Sustained monologue: describing experience"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/monologue-giving-information",
+        "cvScale": "Sustained monologue: giving information"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/monologue-putting-case",
+        "cvScale": "Sustained monologue: putting a case"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/public-announcements",
+        "cvScale": "Public announcements"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/addressing-audiences",
+        "cvScale": "Addressing audiences"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/overall-spoken-interaction",
+        "cvScale": "Overall oral interaction"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/understanding-interlocutor",
+        "cvScale": "Understanding an interlocutor"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/conversation",
+        "cvScale": "Conversation"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/informal-discussion",
+        "cvScale": "Informal discussion (with friends)"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/formal-discussion",
+        "cvScale": "Formal discussion (meetings)"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/goal-oriented-cooperation",
+        "cvScale": "Goal-oriented co-operation"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/obtaining-goods-services",
+        "cvScale": "Obtaining goods and services",
+        "note": "The Voicemode service-encounter mission maps here."
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/information-exchange",
+        "cvScale": "Information exchange"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/interviewing",
+        "cvScale": "Interviewing and being interviewed"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/using-telecommunications",
+        "cvScale": "Using telecommunications"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/overall-phonological-control",
+        "cvScale": "Overall phonological control",
+        "note": "CV replaced the 2001 phonology scale; anchor for GOP metrics."
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/sound-articulation",
+        "cvScale": "Sound articulation",
+        "note": "Anchor for per-phoneme (IPA) scoring — evidence tier 3 until GOP is built."
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/prosodic-features",
+        "cvScale": "Prosodic features",
+        "note": "Stress, rhythm, intonation — kept as separate metric lines, never folded into phoneme scores."
+      }
     ],
     "writing": [
-      { "iri": "https://w3id.org/mllde/cefr/scale/overall-written-production", "cvScale": "Overall written production" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/creative-writing", "cvScale": "Creative writing" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/reports-essays", "cvScale": "Reports and essays" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/overall-written-interaction", "cvScale": "Overall written interaction" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/correspondence", "cvScale": "Correspondence" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/notes-messages-forms", "cvScale": "Notes, messages and forms" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/online-conversation-discussion", "cvScale": "Online conversation and discussion", "note": "CV online-interaction scale; chat-based lessons map here." },
-      { "iri": "https://w3id.org/mllde/cefr/scale/goal-oriented-online-transactions", "cvScale": "Goal-oriented online transactions and collaboration" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/orthographic-control", "cvScale": "Orthographic control" }
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/overall-written-production",
+        "cvScale": "Overall written production"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/creative-writing",
+        "cvScale": "Creative writing"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/reports-essays",
+        "cvScale": "Reports and essays"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/overall-written-interaction",
+        "cvScale": "Overall written interaction"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/correspondence",
+        "cvScale": "Correspondence"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/notes-messages-forms",
+        "cvScale": "Notes, messages and forms"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/online-conversation-discussion",
+        "cvScale": "Online conversation and discussion",
+        "note": "CV online-interaction scale; chat-based lessons map here."
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/goal-oriented-online-transactions",
+        "cvScale": "Goal-oriented online transactions and collaboration"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/orthographic-control",
+        "cvScale": "Orthographic control"
+      }
     ],
     "mediation": [
-      { "iri": "https://w3id.org/mllde/cefr/scale/overall-mediation", "cvScale": "Overall mediation" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/relaying-specific-information", "cvScale": "Relaying specific information (in speech or writing)", "group": "mediating-a-text" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/explaining-data", "cvScale": "Explaining data, e.g. in graphs, diagrams, charts (in speech or writing)", "group": "mediating-a-text" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/processing-text", "cvScale": "Processing text (in speech or writing)", "group": "mediating-a-text" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/translating-written-text", "cvScale": "Translating a written text (in speech or writing)", "group": "mediating-a-text" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/note-taking", "cvScale": "Note-taking (lectures, seminars, meetings)", "group": "mediating-a-text" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/personal-response-creative-texts", "cvScale": "Expressing a personal response to creative texts", "group": "mediating-a-text" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/analysis-criticism-creative-texts", "cvScale": "Analysis and criticism of creative texts", "group": "mediating-a-text" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/facilitating-collaborative-interaction", "cvScale": "Facilitating collaborative interaction with peers", "group": "mediating-concepts" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/collaborating-construct-meaning", "cvScale": "Collaborating to construct meaning", "group": "mediating-concepts" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/managing-interaction", "cvScale": "Managing interaction", "group": "mediating-concepts" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/encouraging-conceptual-talk", "cvScale": "Encouraging conceptual talk", "group": "mediating-concepts" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/facilitating-pluricultural-space", "cvScale": "Facilitating pluricultural space", "group": "mediating-communication" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/acting-as-intermediary", "cvScale": "Acting as intermediary in informal situations", "group": "mediating-communication" },
-      { "iri": "https://w3id.org/mllde/cefr/scale/facilitating-delicate-situations", "cvScale": "Facilitating communication in delicate situations and disagreements", "group": "mediating-communication" }
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/overall-mediation",
+        "cvScale": "Overall mediation"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/relaying-specific-information",
+        "cvScale": "Relaying specific information (in speech or writing)",
+        "group": "mediating-a-text"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/explaining-data",
+        "cvScale": "Explaining data, e.g. in graphs, diagrams, charts (in speech or writing)",
+        "group": "mediating-a-text"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/processing-text",
+        "cvScale": "Processing text (in speech or writing)",
+        "group": "mediating-a-text"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/translating-written-text",
+        "cvScale": "Translating a written text (in speech or writing)",
+        "group": "mediating-a-text"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/note-taking",
+        "cvScale": "Note-taking (lectures, seminars, meetings)",
+        "group": "mediating-a-text"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/personal-response-creative-texts",
+        "cvScale": "Expressing a personal response to creative texts",
+        "group": "mediating-a-text"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/analysis-criticism-creative-texts",
+        "cvScale": "Analysis and criticism of creative texts",
+        "group": "mediating-a-text"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/facilitating-collaborative-interaction",
+        "cvScale": "Facilitating collaborative interaction with peers",
+        "group": "mediating-concepts"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/collaborating-construct-meaning",
+        "cvScale": "Collaborating to construct meaning",
+        "group": "mediating-concepts"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/managing-interaction",
+        "cvScale": "Managing interaction",
+        "group": "mediating-concepts"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/encouraging-conceptual-talk",
+        "cvScale": "Encouraging conceptual talk",
+        "group": "mediating-concepts"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/facilitating-pluricultural-space",
+        "cvScale": "Facilitating pluricultural space",
+        "group": "mediating-communication"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/acting-as-intermediary",
+        "cvScale": "Acting as intermediary in informal situations",
+        "group": "mediating-communication"
+      },
+      {
+        "iri": "https://w3id.org/mllde/cefr/scale/facilitating-delicate-situations",
+        "cvScale": "Facilitating communication in delicate situations and disagreements",
+        "group": "mediating-communication"
+      }
     ]
   },
   "verbs": {
     "reused": [
-      { "iri": "https://adlnet.gov/expapi/verbs/attempted", "use": "Learner attempts a task/mission" },
-      { "iri": "https://adlnet.gov/expapi/verbs/completed", "use": "Task completed — the <MISSION_COMPLETE> gate event" },
-      { "iri": "https://adlnet.gov/expapi/verbs/passed", "use": "Performance meets the level's can-do descriptors (rubric floors met)" },
-      { "iri": "https://adlnet.gov/expapi/verbs/failed", "use": "Attempt did not yet meet floors (non-punitive: pairs with unlimited retry)" },
-      { "iri": "https://adlnet.gov/expapi/verbs/progressed", "use": "Band or subskill progression event (e.g. B1 → B2 readiness signal)" },
-      { "iri": "https://adlnet.gov/expapi/verbs/interacted", "use": "A conversational turn in interaction scales" },
-      { "iri": "https://adlnet.gov/expapi/verbs/asked", "use": "Vocabulary/help request by the learner" },
-      { "iri": "https://w3id.org/xapi/audio/verbs/played", "use": "Optional, listening media events (ADL audio profile)", "verifyOnPackaging": true }
+      {
+        "iri": "https://adlnet.gov/expapi/verbs/attempted",
+        "use": "Learner attempts a task/mission"
+      },
+      {
+        "iri": "https://adlnet.gov/expapi/verbs/completed",
+        "use": "Task completed — the <MISSION_COMPLETE> gate event"
+      },
+      {
+        "iri": "https://adlnet.gov/expapi/verbs/passed",
+        "use": "Performance meets the level's can-do descriptors (rubric floors met)"
+      },
+      {
+        "iri": "https://adlnet.gov/expapi/verbs/failed",
+        "use": "Attempt did not yet meet floors (non-punitive: pairs with unlimited retry)"
+      },
+      {
+        "iri": "https://adlnet.gov/expapi/verbs/progressed",
+        "use": "Band or subskill progression event (e.g. B1 → B2 readiness signal)"
+      },
+      {
+        "iri": "https://adlnet.gov/expapi/verbs/interacted",
+        "use": "A conversational turn in interaction scales"
+      },
+      {
+        "iri": "https://adlnet.gov/expapi/verbs/asked",
+        "use": "Vocabulary/help request by the learner"
+      },
+      {
+        "iri": "https://w3id.org/xapi/audio/verbs/played",
+        "use": "Optional, listening media events (ADL audio profile)",
+        "verifyOnPackaging": true
+      }
     ],
     "minted": [
-      { "iri": "https://w3id.org/mllde/verb/pronounced", "label": "pronounced", "definition": "Made a pronunciation attempt at a declared target feature (phoneme, stress, intonation). Result carries phoneme-scores and/or model-imitation outcome." },
-      { "iri": "https://w3id.org/mllde/verb/mediated", "label": "mediated", "definition": "Performed a mediation activity: transformed or relayed content from a source for a recipient. Context carries the mediation scale IRI and the output-channel skill IRI." },
-      { "iri": "https://w3id.org/mllde/verb/adapted", "label": "adapted", "definition": "Actor is the teaching agent (human or AI): the learning path or assessment was adapted for the learner. Context carries the pedagogical-action IRI and the evidence that motivated it." }
+      {
+        "iri": "https://w3id.org/mllde/verb/pronounced",
+        "label": "pronounced",
+        "definition": "Made a pronunciation attempt at a declared target feature (phoneme, stress, intonation). Result carries phoneme-scores and/or model-imitation outcome."
+      },
+      {
+        "iri": "https://w3id.org/mllde/verb/mediated",
+        "label": "mediated",
+        "definition": "Performed a mediation activity: transformed or relayed content from a source for a recipient. Context carries the mediation scale IRI and the output-channel skill IRI."
+      },
+      {
+        "iri": "https://w3id.org/mllde/verb/adapted",
+        "label": "adapted",
+        "definition": "Actor is the teaching agent (human or AI): the learning path or assessment was adapted for the learner. Context carries the pedagogical-action IRI and the evidence that motivated it."
+      }
     ]
   },
   "activityTypes": {
     "minted": [
-      { "iri": "https://w3id.org/mllde/activity-type/mission", "label": "Mission / authentic task", "note": "The unit of authentic assessment (service encounter, negotiation…). Candidate to align with the ADL seriousgames profile — verify overlap on packaging." },
-      { "iri": "https://w3id.org/mllde/activity-type/conversation-scenario", "label": "Conversation scenario (NPC-guided)" },
-      { "iri": "https://w3id.org/mllde/activity-type/pronunciation-drill", "label": "Pronunciation drill (Notice → Model → Invite → Move on)" },
-      { "iri": "https://w3id.org/mllde/activity-type/mediation-task", "label": "Mediation task" },
-      { "iri": "https://w3id.org/mllde/activity-type/spoken-turn", "label": "Single spoken turn", "note": "Granularity for turn-level telemetry (latency, ASR confidence)" },
-      { "iri": "https://w3id.org/mllde/activity-type/learning-unit", "label": "Learning unit / city module (persona-pack instance)" }
+      {
+        "iri": "https://w3id.org/mllde/activity-type/mission",
+        "label": "Mission / authentic task",
+        "note": "The unit of authentic assessment (service encounter, negotiation…). Candidate to align with the ADL seriousgames profile — verify overlap on packaging."
+      },
+      {
+        "iri": "https://w3id.org/mllde/activity-type/conversation-scenario",
+        "label": "Conversation scenario (NPC-guided)"
+      },
+      {
+        "iri": "https://w3id.org/mllde/activity-type/pronunciation-drill",
+        "label": "Pronunciation drill (Notice → Model → Invite → Move on)"
+      },
+      {
+        "iri": "https://w3id.org/mllde/activity-type/mediation-task",
+        "label": "Mediation task"
+      },
+      {
+        "iri": "https://w3id.org/mllde/activity-type/spoken-turn",
+        "label": "Single spoken turn",
+        "note": "Granularity for turn-level telemetry (latency, ASR confidence)"
+      },
+      {
+        "iri": "https://w3id.org/mllde/activity-type/learning-unit",
+        "label": "Learning unit / city module (persona-pack instance)"
+      }
     ]
   },
   "extensions": {
     "context": [
-      { "iri": "https://w3id.org/mllde/ext/cefr-level", "value": "IRI from cefrLevels" },
-      { "iri": "https://w3id.org/mllde/ext/cefr-skill", "value": "IRI from skills" },
-      { "iri": "https://w3id.org/mllde/ext/cefr-scale", "value": "IRI from subskillScales — the specific Companion Volume descriptor scale the activity evidences" },
-      { "iri": "https://w3id.org/mllde/ext/output-channel", "value": "oral | written — required for mediation statements" },
-      { "iri": "https://w3id.org/mllde/ext/persona-pack", "value": "Identifier of the active instance/city module (engine + pack architecture)" },
-      { "iri": "https://w3id.org/mllde/ext/evidence-tier", "value": "IRI from evidenceTiers — the confidence tier of the measurement in this statement" },
-      { "iri": "https://w3id.org/mllde/ext/pedagogical-action", "value": "IRI from pedagogicalActions — how the teaching side responded (the 'recorded pedagogy, not just performance' stream)" },
-      { "iri": "https://w3id.org/mllde/ext/help-request", "value": "Object: what was asked + resolution strategy (defined-in-target-language, gloss, example…)" }
+      {
+        "iri": "https://w3id.org/mllde/ext/cefr-level",
+        "value": "IRI from cefrLevels"
+      },
+      {
+        "iri": "https://w3id.org/mllde/ext/cefr-skill",
+        "value": "IRI from skills"
+      },
+      {
+        "iri": "https://w3id.org/mllde/ext/cefr-scale",
+        "value": "IRI from subskillScales — the specific Companion Volume descriptor scale the activity evidences"
+      },
+      {
+        "iri": "https://w3id.org/mllde/ext/output-channel",
+        "value": "oral | written — required for mediation statements"
+      },
+      {
+        "iri": "https://w3id.org/mllde/ext/persona-pack",
+        "value": "Identifier of the active instance/city module (engine + pack architecture)"
+      },
+      {
+        "iri": "https://w3id.org/mllde/ext/evidence-tier",
+        "value": "IRI from evidenceTiers — the confidence tier of the measurement in this statement"
+      },
+      {
+        "iri": "https://w3id.org/mllde/ext/pedagogical-action",
+        "value": "IRI from pedagogicalActions — how the teaching side responded (the 'recorded pedagogy, not just performance' stream)"
+      },
+      {
+        "iri": "https://w3id.org/mllde/ext/help-request",
+        "value": "Object: what was asked + resolution strategy (defined-in-target-language, gloss, example…)"
+      },
+      {
+        "iri": "https://w3id.org/mllde/ext/input-channel",
+        "value": "voice | text — modality of the scored production; lets the ASR 0.70 gate apply to voice only (typed/OCR scores without the gate). Added v0.8.3."
+      },
+      {
+        "iri": "https://w3id.org/mllde/ext/measure-model",
+        "value": "String/id — the model that scored this session; kept for comparability and governance (sessions by different models are not mixed). Added v0.8.1."
+      }
     ],
     "result": [
-      { "iri": "https://w3id.org/mllde/ext/rubric-scores", "value": "Object keyed by rubricCategories IRIs, bands 1–3 read against the level descriptor" },
-      { "iri": "https://w3id.org/mllde/ext/phoneme-scores", "value": "Array of { ipa: string (broad transcription), score: 0–100, confidence: 0–1, acceptedVariants: [ipa] } — acceptedVariants encodes legitimate variation (e.g. seseo/distinción); tier 3 until GOP or vendor scorer is integrated" },
-      { "iri": "https://w3id.org/mllde/ext/asr-confidence", "value": "0–1 transcript confidence for the scored audio" },
-      { "iri": "https://w3id.org/mllde/ext/turn-latency-ms", "value": "Milliseconds from prompt end to learner speech onset — cognitive-load proxy" },
-      { "iri": "https://w3id.org/mllde/ext/retries", "value": "Retry count to completion (non-punitive mastery loop)" },
-      { "iri": "https://w3id.org/mllde/ext/grammar-error", "value": "Object: category + example + handled-by (pedagogicalActions IRI)" }
+      {
+        "iri": "https://w3id.org/mllde/ext/rubric-scores",
+        "value": "Object keyed by rubricCategories IRIs, integer bands 0–10 read against the level descriptor (pass = band ≥ 6; floors intelligibility AND interaction ≥ 4). Cambridge 0–5 view = round(band/2), a reporting lens only. (Corrected from the earlier 1–3 draft wording.)"
+      },
+      {
+        "iri": "https://w3id.org/mllde/ext/phoneme-scores",
+        "value": "Array of { ipa: string (broad transcription), score: 0–100, confidence: 0–1, acceptedVariants: [ipa] } — acceptedVariants encodes legitimate variation (e.g. seseo/distinción); tier 3 until GOP or vendor scorer is integrated"
+      },
+      {
+        "iri": "https://w3id.org/mllde/ext/asr-confidence",
+        "value": "0–1 transcript confidence for the scored audio"
+      },
+      {
+        "iri": "https://w3id.org/mllde/ext/turn-latency-ms",
+        "value": "Milliseconds from prompt end to learner speech onset — cognitive-load proxy"
+      },
+      {
+        "iri": "https://w3id.org/mllde/ext/retries",
+        "value": "Retry count to completion (non-punitive mastery loop)"
+      },
+      {
+        "iri": "https://w3id.org/mllde/ext/grammar-error",
+        "value": "Object: category + example + handled-by (pedagogicalActions IRI)"
+      }
     ],
     "incident": [
-      { "iri": "https://w3id.org/mllde/ext/incident-type", "value": "IRI from incidentTypes" },
-      { "iri": "https://w3id.org/mllde/ext/incident-severity", "value": "low | medium | high | blocking" },
-      { "iri": "https://w3id.org/mllde/ext/incident-resolution", "value": "Object: change made + date + post-change rate — the resolution ledger for the admin improvement loop" }
+      {
+        "iri": "https://w3id.org/mllde/ext/incident-type",
+        "value": "IRI from incidentTypes"
+      },
+      {
+        "iri": "https://w3id.org/mllde/ext/incident-severity",
+        "value": "low | medium | high | blocking"
+      },
+      {
+        "iri": "https://w3id.org/mllde/ext/incident-resolution",
+        "value": "Object: change made + date + post-change rate — the resolution ledger for the admin improvement loop"
+      }
     ]
   },
   "rubricCategories": [
-    { "iri": "https://w3id.org/mllde/rubric/grammar-accuracy", "label": "Grammar / Accuracy" },
-    { "iri": "https://w3id.org/mllde/rubric/vocabulary-range", "label": "Vocabulary / Range" },
-    { "iri": "https://w3id.org/mllde/rubric/pronunciation-phonological-control", "label": "Pronunciation / Phonological control" },
-    { "iri": "https://w3id.org/mllde/rubric/intelligibility", "label": "Intelligibility (pass floor ≥ 2)" },
-    { "iri": "https://w3id.org/mllde/rubric/interaction", "label": "Interaction / Fluency (pass floor ≥ 2)" }
+    {
+      "iri": "https://w3id.org/mllde/rubric/grammar-accuracy",
+      "label": "Grammar / Accuracy"
+    },
+    {
+      "iri": "https://w3id.org/mllde/rubric/vocabulary-range",
+      "label": "Vocabulary / Range"
+    },
+    {
+      "iri": "https://w3id.org/mllde/rubric/pronunciation-phonological-control",
+      "label": "Pronunciation / Phonological control"
+    },
+    {
+      "iri": "https://w3id.org/mllde/rubric/intelligibility",
+      "label": "Intelligibility (pass floor ≥ 2)"
+    },
+    {
+      "iri": "https://w3id.org/mllde/rubric/interaction",
+      "label": "Interaction / Fluency (pass floor ≥ 2)"
+    }
   ],
   "pedagogicalActions": [
-    { "iri": "https://w3id.org/mllde/action/implicit-recast", "label": "Implicit recast — correct by modelling, flow preserved" },
-    { "iri": "https://w3id.org/mllde/action/model-invite", "label": "Model + invite retry (pronunciation ladder step)" },
-    { "iri": "https://w3id.org/mllde/action/scaffold", "label": "Scaffold — graded hint, never the full answer first" },
-    { "iri": "https://w3id.org/mllde/action/simplify", "label": "Simplify / slow down / repeat (penalty-free)" },
-    { "iri": "https://w3id.org/mllde/action/advance", "label": "Advance — reduce support, raise challenge (i+1)" }
+    {
+      "iri": "https://w3id.org/mllde/action/implicit-recast",
+      "label": "Implicit recast — correct by modelling, flow preserved"
+    },
+    {
+      "iri": "https://w3id.org/mllde/action/model-invite",
+      "label": "Model + invite retry (pronunciation ladder step)"
+    },
+    {
+      "iri": "https://w3id.org/mllde/action/scaffold",
+      "label": "Scaffold — graded hint, never the full answer first"
+    },
+    {
+      "iri": "https://w3id.org/mllde/action/simplify",
+      "label": "Simplify / slow down / repeat (penalty-free)"
+    },
+    {
+      "iri": "https://w3id.org/mllde/action/advance",
+      "label": "Advance — reduce support, raise challenge (i+1)"
+    }
   ],
   "evidenceTiers": [
-    { "iri": "https://w3id.org/mllde/evidence-tier/1-measurable-today", "label": "Tier 1 — task gates, retries, rubric bands, help requests" },
-    { "iri": "https://w3id.org/mllde/evidence-tier/2-instrumented", "label": "Tier 2 — requires instrumentation: latency, ASR-confidence-weighted scores, vendor pronunciation APIs over an IPA-coded inventory" },
-    { "iri": "https://w3id.org/mllde/evidence-tier/3-pending-gop", "label": "Tier 3 — per-phoneme phonological control pending the GOP build (open research piece)" }
+    {
+      "iri": "https://w3id.org/mllde/evidence-tier/1-measurable-today",
+      "label": "Tier 1 — task gates, retries, rubric bands, help requests"
+    },
+    {
+      "iri": "https://w3id.org/mllde/evidence-tier/2-instrumented",
+      "label": "Tier 2 — requires instrumentation: latency, ASR-confidence-weighted scores, vendor pronunciation APIs over an IPA-coded inventory"
+    },
+    {
+      "iri": "https://w3id.org/mllde/evidence-tier/3-pending-gop",
+      "label": "Tier 3 — per-phoneme phonological control pending the GOP build (open research piece)"
+    }
   ],
   "incidentTypes": [
-    { "iri": "https://w3id.org/mllde/incident/asr-failure", "label": "ASR failure — no usable transcript" },
-    { "iri": "https://w3id.org/mllde/incident/low-asr-confidence", "label": "Low ASR confidence below scoring threshold" },
-    { "iri": "https://w3id.org/mllde/incident/endpointing-cutoff", "label": "Endpointing cut-off — learner interrupted mid-turn" },
-    { "iri": "https://w3id.org/mllde/incident/text-fallback-activation", "label": "Text fallback activated (accessibility signal)" },
-    { "iri": "https://w3id.org/mllde/incident/completion-token-failure", "label": "Completion token not emitted/parsed" },
-    { "iri": "https://w3id.org/mllde/incident/offtopic-redirect", "label": "Off-topic redirect by the agent" },
-    { "iri": "https://w3id.org/mllde/incident/unresolved-help-request", "label": "Help request left unresolved" }
+    {
+      "iri": "https://w3id.org/mllde/incident/asr-failure",
+      "label": "ASR failure — no usable transcript"
+    },
+    {
+      "iri": "https://w3id.org/mllde/incident/low-asr-confidence",
+      "label": "Low ASR confidence below scoring threshold"
+    },
+    {
+      "iri": "https://w3id.org/mllde/incident/endpointing-cutoff",
+      "label": "Endpointing cut-off — learner interrupted mid-turn"
+    },
+    {
+      "iri": "https://w3id.org/mllde/incident/text-fallback-activation",
+      "label": "Text fallback activated (accessibility signal)"
+    },
+    {
+      "iri": "https://w3id.org/mllde/incident/completion-token-failure",
+      "label": "Completion token not emitted/parsed"
+    },
+    {
+      "iri": "https://w3id.org/mllde/incident/offtopic-redirect",
+      "label": "Off-topic redirect by the agent"
+    },
+    {
+      "iri": "https://w3id.org/mllde/incident/unresolved-help-request",
+      "label": "Help request left unresolved"
+    }
   ]
 }

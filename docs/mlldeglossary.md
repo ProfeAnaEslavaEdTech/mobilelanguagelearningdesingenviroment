@@ -14,7 +14,9 @@ term from AI engineering and learning-data standards used in the MLLDE Measureme
 Module, explained in plain language, with the reason it matters to this research.
 Companion to the MLLDE xAPI IRI Registry and the Measurement Module concept.*
 
-**Version:** 1.0 · **Date:** 2026-08-04 · **Author:** Ana Eslava-Graterol (profeanaeslava)
+**Measurement model:** v0.8.3 · **Content inventory:** v0.7.1 (15/08/2026) · **Updated:** 2026-10-23 · **Author:** Ana Eslava-Graterol (profeanaeslava)
+
+*Canonical IRI registry (live): https://profeanaeslavaedtech.github.io/mllde-xapi/ — content inventory and measurement model version on two separate axes.*
 
 ---
 
@@ -175,17 +177,29 @@ e.g. an implicit recast — and its outcome).
 tortilla!") without interrupting the flow. Logged, not just performed — so
 adaptation decisions can be audited.
 
-**Self-scaling rubric.** MLLDE's five-category speaking rubric (Grammar/Accuracy ·
+**Self-scaling rubric.** MLLDE's seven-category speaking rubric (Grammar/Accuracy ·
 Vocabulary/Range · Pronunciation/Phonological control · Intelligibility ·
-Interaction), banded 1–3 *read against the level's descriptor*, so one instrument
-covers A1–C2 (a 3 at A2 ≠ a 3 at C1). Pass floors: intelligibility ≥ 2 and
-interaction ≥ 2.
+Interaction · Discourse management · Global achievement), banded **0–10** *read
+against the level's descriptor*, so one instrument covers A1–C2 (a 6 at A2 ≠ a 6 at
+C1). Pass = band ≥ 6; floors: intelligibility ≥ 4 AND interaction ≥ 4. (The
+Cambridge 0–5 view = round(band/2), a reporting lens only. Corrected from the
+earlier 1–3 draft wording.)
 
 **Evidence tiers.** The module's honesty rule for voice data. Tier 1: measurable
 today (task gates, retries, rubric bands, help requests). Tier 2: measurable with
 instrumentation (latency, confidence-weighted scores, vendor pronunciation APIs
 over an IPA inventory). Tier 3: pending the bespoke GOP build. Every claim carries
 its tier; reports never state more precision than the engine possesses.
+
+**Input channel (voice | text).** A per-session marker of the modality that produced
+the band. The band is read from the transcript in both cases; input-channel lets the
+ASR-confidence gate (0.70) apply to *voice only* — a typed or OCR turn scores without
+the gate. Added in measurement model v0.8.3.
+
+**Measure-model.** Each scored session declares the model that produced its marks.
+Kept for comparability (sessions scored by different models are not mixed in
+aggregates) and governance: it is how a provider-routing deviation was detected and
+the affected sessions excluded from the clean set. Added in v0.8.1.
 
 **Persona pack / project pack.** MLLDE's replicability device: the engine (rules,
 rubric, registry) is constant; each app or client fills one pack (language, levels,
