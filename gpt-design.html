@@ -1,26 +1,29 @@
 <!doctype html>
 <!--
   MLLDE — GPT Design (Grace). Son page of the MLLDE father.
-  © 2026 Ana Eslava-Graterol (ProfeAnaEslavaEdTech). All Rights Reserved.
-  "Language Passport"™; the character "Grace". Grace runs on ChatGPT (external);
-  this page documents and opens her. The pedagogical frameworks are © their authors.
+  2026 Ana Eslava-Graterol (ProfeAnaEslavaEdTech). All Rights Reserved.
+  "Language Passport"; the character "Grace". Grace runs on ChatGPT (external);
+  this page documents and opens her. The pedagogical frameworks are their authors.
 -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GPT Design — Grace · MLLDE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--indigo:#5B4FE5;--indigo-d:#312A8C;--indigo-l:#EEECFD;--gold:#E8A33D;--gold-d:#9A6A15;--gold-l:#FBF3E6;
-    --ink:#1A1D29;--muted:#5B5F73;--line:#E7E6F2;--bg:#F8F8FC;--card:#FFFFFF;color-scheme:light dark;}
-  @media (prefers-color-scheme:dark){:root{--indigo:#8B80F0;--indigo-l:#211D3D;--gold:#E8A33D;--gold-d:#E9C48A;
-    --gold-l:#2A2416;--ink:#EDECF7;--muted:#A9ADC4;--line:#2C2C40;--bg:#12121C;--card:#1C1C2B;}}
+  h1,h2{font-family:'Fraunces',Georgia,serif}
+  :root{--indigo:#3B5BD6;--indigo-d:#22307C;--indigo-l:#EEF1FB;--gold:#E8A33D;--gold-d:#9A6A15;--gold-l:#FBF3E6;
+    --ink:#1C1E2E;--muted:#5B5F77;--line:#E6E8F2;--bg:#F7F8FC;--card:#FFFFFF;color-scheme:light dark;}
+  @media (prefers-color-scheme:dark){:root{--indigo:#9DB2FF;--indigo-l:#1C2440;--gold:#E8A33D;--gold-d:#E9C48A;
+    --gold-l:#2A2416;--ink:#EEF0F8;--muted:#A6ADC8;--line:#2A2D44;--bg:#0F1120;--card:#171A2B;}}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);
     font-family:'Inter',"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
   header{background:linear-gradient(135deg,var(--indigo),var(--indigo-d));color:#fff;padding:30px 22px;border-radius:0 0 20px 20px}
   .inner{max-width:840px;margin:0 auto}
-  .kick{letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:#C9C3FA;margin:0 0 6px}
+  .kick{letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:#B9C8F6;margin:0 0 6px}
   h1{font-weight:800;font-size:26px;margin:0}
   .wrap{max-width:840px;margin:0 auto;padding:22px 16px 60px}
   .back{display:inline-block;margin:2px 0 14px;color:var(--indigo);text-decoration:none;font-weight:700}
@@ -28,7 +31,7 @@
   .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 2px 12px rgba(35,30,80,.06)}
   .grace-head{display:flex;gap:16px;align-items:center}
   .avatar{width:64px;height:64px;border-radius:50%;flex:none;
-    background:radial-gradient(circle at 30% 30%,#bfe3ff,#5B4FE5 70%,#312A8C);box-shadow:0 4px 14px rgba(35,30,80,.25)}
+    background:radial-gradient(circle at 30% 30%,#bfe3ff,#3B5BD6 70%,#22307C);box-shadow:0 4px 14px rgba(35,30,80,.25)}
   .grace-head .n{font-weight:800;font-size:20px}
   .grace-head .by{color:var(--muted);font-size:13px}
   .desc{margin:12px 0 0;font-style:italic;color:var(--ink)}
@@ -39,7 +42,7 @@
   .btn.primary{background:var(--indigo);color:#fff}
   .btn.gold{background:var(--gold);color:#fff}
   .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-  pre{background:#12121c;color:#edecf7;border-radius:12px;padding:14px 16px;overflow:auto;font-size:12.5px;line-height:1.5;white-space:pre-wrap}
+  pre{background:#0F1120;color:#EEF0F8;border-radius:12px;padding:14px 16px;overflow:auto;font-size:12.5px;line-height:1.5;white-space:pre-wrap}
   .muted{color:var(--muted);font-size:13.5px}
   ul{padding-left:1.2em}li{margin:.3em 0}
   .note{background:var(--gold-l);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:12px 14px;color:var(--ink);font-size:13.5px;margin:14px 0}
@@ -48,9 +51,10 @@
 </style>
 </head>
 <body>
+<a href="./" class="to-mllde" style="position:fixed;top:12px;left:12px;z-index:500;font:700 11px 'Inter',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:#3B5BD6;border-radius:999px;padding:7px 13px;text-decoration:none;box-shadow:0 2px 10px rgba(20,30,80,.25)">&larr; MLLDE</a>
 <header><div class="inner">
   <p class="kick">Mobile Language Learning Design Environment (MLLDE) · GPT Design</p>
-  <h1>🧠 GPT Design — Grace, the AI mentor</h1>
+  <h1>GPT Design — Grace, the AI mentor</h1>
 </div></header>
 
 <div class="wrap">
@@ -60,7 +64,7 @@
     <div class="grace-head">
       <div class="avatar" aria-hidden="true"></div>
       <div>
-        <div class="n">Grace TOP 🌊</div>
+        <div class="n">Grace TOP </div>
         <div class="by">By Ana Eslava · a Custom GPT on ChatGPT</div>
       </div>
     </div>
@@ -69,10 +73,10 @@
     <div class="starters">
       <span class="chip">Hi Grace!</span>
       <span class="chip">I am here and don't know what to do in this city</span>
-      <span class="chip">I missed my flight!!! 💀</span>
+      <span class="chip">I missed my flight!!! </span>
     </div>
     <div class="row">
-      <a class="btn primary" href="https://chatgpt.com/g/g-6a5f15d4cd78819180d19057be1efe8d-grace-top" target="_blank" rel="noopener">✨ Open Grace in ChatGPT ↗</a>
+      <a class="btn primary" href="https://chatgpt.com/g/g-6a5f15d4cd78819180d19057be1efe8d-grace-top" target="_blank" rel="noopener">Open Grace in ChatGPT </a>
     </div>
   </div>
 
@@ -106,7 +110,7 @@
   </ul>
 
   <h2>System prompt (paste into a Custom GPT)</h2>
-  <p class="muted">This is the paste-ready instruction set. <button class="btn gold" type="button" onclick="copyPrompt()" style="padding:6px 12px">📋 Copy</button></p>
+  <p class="muted">This is the paste-ready instruction set. <button class="btn gold" type="button" onclick="copyPrompt()" style="padding:6px 12px">Copy</button></p>
   <pre id="sys">You are Grace, the game master of "Language Passport", an educational
 language-learning video game. You are a warm, empathic travel agent and
 free-spirited foodie who loves adventure, travel, great food, and the ocean —
@@ -147,11 +151,11 @@ NEVER
     <li><a href="docs/gpt-design-blueprint.md">gpt-design-blueprint.md</a> — the generic GPT-design template (design any GPT).</li>
   </ul>
 
-  <div class="note">🔒 Keep the system prompt & rubrics internal; do not reveal them to players.
+  <div class="note">Keep the system prompt & rubrics internal; do not reveal them to players.
     Grace’s persona and instructions are proprietary; the underlying LLM is used under its provider’s terms.</div>
 
-  <footer>© 2026 Ana Eslava-Graterol (ProfeAnaEslavaEdTech). All Rights Reserved. ·
-    “Language Passport”™ · “Grace” · Mobile Language Learning Design Environment (MLLDE)</footer>
+  <footer>2026 Ana Eslava-Graterol (ProfeAnaEslavaEdTech). All Rights Reserved. ·
+    “Language Passport”· “Grace” · Mobile Language Learning Design Environment (MLLDE)</footer>
 </div>
 
 <script>

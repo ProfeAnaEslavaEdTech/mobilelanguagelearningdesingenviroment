@@ -1,7 +1,7 @@
 <!doctype html>
 <!--
   Mobile Language Learning Design Environment (MLLDE) — Lesson Builder (blank worksheet + Barcelona/Sevilla examples)
-  Copyright © 2026 Ana Eslava-Graterol (ProfeAnaEslavaEdTech). All Rights Reserved.
+  Copyright 2026 Ana Eslava-Graterol (ProfeAnaEslavaEdTech). All Rights Reserved.
   Proprietary and confidential. Unauthorized copying, distribution, modification,
   or creation of derivative works is prohibited. See the LICENSE and NOTICE files.
   "Language Passport" (one lesson of this Curriculum) and related names are
@@ -16,26 +16,29 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="Ana Eslava-Graterol (ProfeAnaEslavaEdTech)">
-<meta name="copyright" content="© 2026 Ana Eslava-Graterol (ProfeAnaEslavaEdTech). All Rights Reserved.">
+<meta name="copyright" content="2026 Ana Eslava-Graterol (ProfeAnaEslavaEdTech). All Rights Reserved.">
 <title>Language Passport — Lesson Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  h1,h2{font-family:'Fraunces',Georgia,serif}
   :root{
     /* Re-skinned to match the Data Book design system: indigo + gold, Inter */
-    --teal:#5B4FE5; --teal-d:#312A8C; --teal-l:#EEECFD; --teal-br:#C9C3FA;
-    --teal-ink:#312A8C;
+    --teal:#3B5BD6; --teal-d:#22307C; --teal-l:#EEF1FB; --teal-br:#B9C8F6;
+    --teal-ink:#22307C;
     --amber:#E8A33D; --amber-d:#9A6A15; --amber-l:#FBF3E6; --amber-br:#F0DDB0;
-    --purple:#5B4FE5; --purple-l:#EEECFD; --purple-br:#C9C3FA;
-    --ink:#1A1D29; --muted:#5B5F73; --line:#E7E6F2; --bg:#F8F8FC; --card:#FFFFFF;
+    --purple:#3B5BD6; --purple-l:#EEF1FB; --purple-br:#B9C8F6;
+    --ink:#1C1E2E; --muted:#5B5F77; --line:#E6E8F2; --bg:#F7F8FC; --card:#FFFFFF;
     --field:#FFFFFF; --row:#FAFBFF; --stripe:#F6FBFA; --toolbar-bg:rgba(248,248,252,.94);
     color-scheme:light;
   }
   :root[data-theme="dark"]{
     /* Data Book dark theme */
-    --teal:#8B80F0; --teal-d:#312A8C; --teal-l:#211D3D; --teal-br:#2C2C40;
-    --teal-ink:#C9C3FA;
+    --teal:#9DB2FF; --teal-d:#22307C; --teal-l:#1C2440; --teal-br:#2A2D44;
+    --teal-ink:#B9C8F6;
     --amber:#E8A33D; --amber-d:#E9C48A; --amber-l:#2A2416; --amber-br:#4A3C1E;
-    --purple:#8B80F0; --purple-l:#211D3D; --purple-br:#2C2C40;
-    --ink:#EDECF7; --muted:#A9ADC4; --line:#2C2C40; --bg:#12121C; --card:#1C1C2B;
+    --purple:#9DB2FF; --purple-l:#1C2440; --purple-br:#2A2D44;
+    --ink:#EEF0F8; --muted:#A6ADC8; --line:#2A2D44; --bg:#0F1120; --card:#171A2B;
     --field:#232336; --row:#191925; --stripe:#191926; --toolbar-bg:rgba(18,18,28,.90);
     color-scheme:dark;
   }
@@ -49,7 +52,7 @@
   header{background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#fff;
          padding:30px 24px;border-radius:0 0 20px 20px;box-shadow:0 6px 22px rgba(35,30,80,.22)}
   header .inner{max-width:940px;margin:0 auto}
-  .kick{letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:#C9C3FA;margin:0 0 6px}
+  .kick{letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:#B9C8F6;margin:0 0 6px}
   header h1{font-family:inherit;font-weight:800;letter-spacing:-.02em;font-size:30px;margin:0 0 6px}
   header p{margin:0;color:#DDD9FA;font-size:14.5px;max-width:660px}
   header .stamp{float:right;font-size:46px;line-height:1;opacity:.9;margin-left:16px}
@@ -152,7 +155,7 @@
     :root, :root[data-theme]{
       --card:#fff; --bg:#fff; --field:#fff; --row:#fff; --stripe:#fff;
       --ink:#111; --line:#ccc; --teal-l:#eeeafd; --amber-l:#fff;
-      --teal-ink:#312A8C; --amber-d:#7A5410;
+      --teal-ink:#22307C; --amber-d:#7A5410;
     }
     .toolbar,.add,.row .rm,.intro{display:none!important}
     header{border-radius:0;box-shadow:none}
@@ -166,9 +169,10 @@
 </style>
 </head>
 <body>
+<a href="./" class="to-mllde" style="position:fixed;top:12px;left:12px;z-index:500;font:700 11px 'Inter',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:#3B5BD6;border-radius:999px;padding:7px 13px;text-decoration:none;box-shadow:0 2px 10px rgba(20,30,80,.25)">&larr; MLLDE</a>
 <header>
   <div class="inner">
-    <span class="stamp">🛂</span>
+    
     <p class="kick">Mobile Language Learning Design Environment (MLLDE) · Lesson Builder</p>
     <h1>Language Passport — Lesson Builder</h1>
     <p>This page opens <b>blank</b> — fill it top-to-bottom to author a <b>new lesson</b>, then
@@ -179,21 +183,21 @@
 
 <div class="toolbar">
   <div class="inner">
-    <button class="btn-primary" onclick="downloadJSON()">💾 Save (JSON)</button>
-    <button class="btn-ghost" onclick="document.getElementById('loader').click()">📂 Load</button>
+    <button class="btn-primary" onclick="downloadJSON()">Save (JSON)</button>
+    <button class="btn-ghost" onclick="document.getElementById('loader').click()">Load</button>
     <input id="loader" type="file" accept="application/json" style="display:none" onchange="loadJSON(event)">
-    <button class="btn-amber" onclick="window.print()">🖨️ Print / PDF</button>
-    <button class="btn-ghost" onclick="loadUnit('bcn')" title="Load the Barcelona example (replaces the form)">📘 Barcelona example</button>
-    <button class="btn-ghost" onclick="loadUnit('sev')" title="Load the Sevilla example (replaces the form)">📗 Sevilla example</button>
+    <button class="btn-amber" onclick="window.print()">Print / PDF</button>
+    <button class="btn-ghost" onclick="loadUnit('bcn')" title="Load the Barcelona example (replaces the form)">Barcelona example</button>
+    <button class="btn-ghost" onclick="loadUnit('sev')" title="Load the Sevilla example (replaces the form)">Sevilla example</button>
     <span class="sp"></span>
-    <button class="btn-ghost" id="themeBtn" onclick="toggleTheme()" title="Toggle light / dark">🌙 Dark</button>
+    <button class="btn-ghost" id="themeBtn" onclick="toggleTheme()" title="Toggle light / dark">Dark</button>
     <button class="btn-danger" onclick="clearAll()">Clear all</button>
   </div>
 </div>
 
 <div class="wrap">
   <div class="intro">
-    ℹ️ <b>How to use:</b> work top-to-bottom. Set the <b>lesson length</b> in §1 — the guide shows how
+    <b>How to use:</b> work top-to-bottom. Set the <b>lesson length</b> in §1 — the guide shows how
     much content to add. Use <b>+ Add</b> to grow the lists (vocabulary, chunks, dialogue, drills,
     culture cards…). Hit <b>Save (JSON)</b> to keep your work or hand it off for the build; <b>Load</b>
     to resume. Your progress also auto-saves in this browser. Fields marked
@@ -202,7 +206,7 @@
 
   <!-- Theoretical framework & attributions -->
   <details class="framework">
-    <summary>📚 Theoretical framework &amp; attributions — the scholars behind this method</summary>
+    <summary>Theoretical framework &amp; attributions — the scholars behind this method</summary>
     <div class="fw-body">
       <p class="fw-note">This Curriculum stands on established scholarly frameworks and design
         standards. Each method below is credited to its originator, out of respect for their teaching
@@ -236,7 +240,7 @@
       </div>
       <p class="fw-src">Source matrix: <i>Educational Resources and Research on Digital Learning</i>
         (stored under <code>docs/sources/</code>); years are indicative — full bibliographic detail lives
-        in that workbook and the project blueprint. Third-party frameworks remain © their respective authors.</p>
+        in that workbook and the project blueprint. Third-party frameworks remain their respective authors.</p>
     </div>
   </details>
 
@@ -255,7 +259,7 @@
     <div class="grid g4" style="margin-top:14px">
       <label class="field">City <input data-field="city" placeholder="Barcelona"></label>
       <label class="field">Country <input data-field="country" placeholder="Spain"></label>
-      <label class="field">Flag emoji <input data-field="flag" placeholder="🇪🇸"></label>
+      <label class="field">Flag emoji <input data-field="flag" placeholder=""></label>
       <label class="field">CEFR level <input data-field="level" placeholder="A1–A2"></label>
     </div>
     <div class="grid g2" style="margin-top:14px">
@@ -265,7 +269,7 @@
     </div>
     <div style="margin-top:16px" class="dur-wrap">
       <label class="field" style="min-width:150px">Lesson length <span class="req">*</span>
-        <small>microlearning ↔ extended</small>
+        <small>microlearning extended</small>
         <select data-field="duration" id="duration" onchange="updateDurGuide()">
           <option value="5">5 minutes</option>
           <option value="10">10 minutes</option>
@@ -318,7 +322,7 @@
     <div class="grid g3" style="margin-top:14px">
       <label class="field">Identity — FROM <input data-field="n_from" placeholder="Hitchhiker"></label>
       <label class="field">Identity — TO <input data-field="n_to" placeholder="Travel Ambassador"></label>
-      <label class="field">Mentor name + emoji <input data-field="n_mentor" placeholder="Guía Marta 🧭"></label>
+      <label class="field">Mentor name + emoji <input data-field="n_mentor" placeholder="Guía Marta "></label>
     </div>
   </section>
 
@@ -349,7 +353,7 @@
   <!-- 8. Processing drills -->
   <section class="card">
     <h2><span class="n">8</span> Processing drills</h2>
-    <p class="tie">IPO Processing / ESA Study — <b class="who">Casañ-Pitarch; Harmer</b> · learners manipulate the language (earn coins 🪙)</p>
+    <p class="tie">IPO Processing / ESA Study — <b class="who">Casañ-Pitarch; Harmer</b> · learners manipulate the language (earn coins )</p>
     <h3 style="font-size:14px;color:var(--amber-d);margin:6px 0 2px">Gap-fill</h3>
     <p class="tie" style="margin-left:0">Write the sentence, mark the blank with <code>___</code></p>
     <div class="rows" data-list="gapfill"></div>
@@ -391,12 +395,12 @@
   <section class="card">
     <h2><span class="n">10</span> Reflection — choose your skill</h2>
     <p class="tie">IPO Output / REACT Transferring — <b class="who">Casañ-Pitarch; CORD–Crawford, 2001</b> · learner picks ORAL or WRITTEN to deploy the language in a new context</p>
-    <h3 style="font-size:14px;color:var(--amber-d);margin:6px 0 2px">🎙️ Oral prompts <small style="font-weight:400;color:var(--muted)">(recorded via speech recognition)</small></h3>
+    <h3 style="font-size:14px;color:var(--amber-d);margin:6px 0 2px">Oral prompts <small style="font-weight:400;color:var(--muted)">(recorded via speech recognition)</small></h3>
     <div class="rows" data-list="oral"></div>
     <button class="add" onclick="addRow('oral')">+ Add oral prompt</button>
 
     <div class="grid" style="margin-top:18px">
-      <label class="field">✍️ Written prompt
+      <label class="field">Written prompt
         <input data-field="r_written" placeholder="Write a postcard to a friend about your tapas adventure">
       </label>
       <label class="field">Rubric — what a good response includes
@@ -408,7 +412,7 @@
   <!-- 11. Culture & pragmatics cards -->
   <section class="card">
     <h2><span class="n">11</span> Culture &amp; pragmatics cards <span style="font-weight:400;font-size:14px;color:var(--muted)">— ¿Sabías que…?</span></h2>
-    <p class="tie">CLIL Culture <b class="who">(Coyle)</b> + pragmatic competence <b class="who">(Kasper &amp; Rose, 2001)</b> · the lesson ends here (as the original De Tapas did) — teach <b>art 🎨, food 🍽️, culture 🏛️, curiosidad ✨</b> and <b>pragmática 💬</b> about the place (read aloud on tap).</p>
+    <p class="tie">CLIL Culture <b class="who">(Coyle)</b> + pragmatic competence <b class="who">(Kasper &amp; Rose, 2001)</b> · the lesson ends here (as the original De Tapas did) — teach <b>art , food , culture , curiosidad </b> and <b>pragmática </b> about the place (read aloud on tap).</p>
     <div class="rows" data-list="culture"></div>
     <button class="add" onclick="addRow('culture')">+ Add culture / pragmatics card</button>
   </section>
@@ -418,16 +422,16 @@
     <h2><span class="n">12</span> Rewards &amp; economy</h2>
     <p class="tie">G-CLIL Ring 4 — <b class="who">Casañ-Pitarch, 2017</b> · every mechanic ties back to a learning aim</p>
     <div class="grid g2">
-      <label class="field">Coins earned this lesson 🪙 <input data-field="rw_coins" type="number" placeholder="50"></label>
-      <label class="field">Passport stamp label / emoji 🛂 <input data-field="rw_stamp" placeholder="Barcelona ✅"></label>
+      <label class="field">Coins earned this lesson <input data-field="rw_coins" type="number" placeholder="50"></label>
+      <label class="field">Passport stamp label / emoji <input data-field="rw_stamp" placeholder="Barcelona ✓"></label>
     </div>
     <div class="grid g3" style="margin-top:14px">
       <label class="field">Souvenir name <input data-field="rw_souvenir" placeholder="Miró-mosaic tile"></label>
-      <label class="field">Souvenir emoji / image <input data-field="rw_souvenirImg" placeholder="🎨"></label>
+      <label class="field">Souvenir emoji / image <input data-field="rw_souvenirImg" placeholder=""></label>
       <label class="field">Souvenir coin cost <input data-field="rw_souvenirCost" type="number" placeholder="30"></label>
     </div>
     <div class="grid g2" style="margin-top:14px">
-      <label class="field">Next flight ✈️ — destination <input data-field="rw_nextDest" placeholder="Roma (locked · próximamente)"></label>
+      <label class="field">Next flight — destination <input data-field="rw_nextDest" placeholder="Roma (locked · próximamente)"></label>
       <label class="field">Flight ticket cost <input data-field="rw_flightCost" type="number" placeholder="40"></label>
     </div>
   </section>
@@ -435,9 +439,9 @@
   <footer>
     Mobile Language Learning Design Environment (MLLDE) · Design Worksheet · self-contained &amp;
     offline · mirrors the blueprint Destination Schema<br>
-    © 2026 Ana Eslava-Graterol (ProfeAnaEslavaEdTech). All Rights Reserved. ·
-    Proprietary — see LICENSE · “Language Passport”™ is one lesson of this Curriculum<br>
-    <span style="font-size:11px">Referenced pedagogical frameworks © their respective authors — see the attributions panel.</span>
+    2026 Ana Eslava-Graterol (ProfeAnaEslavaEdTech). All Rights Reserved. ·
+    Proprietary — see LICENSE · “Language Passport”is one lesson of this Curriculum<br>
+    <span style="font-size:11px">Referenced pedagogical frameworks their respective authors — see the attributions panel.</span>
   </footer>
 </div>
 
@@ -447,7 +451,7 @@
   function applyTheme(t){
     document.documentElement.setAttribute("data-theme", t);
     const b=document.getElementById("themeBtn");
-    if(b) b.textContent = (t==="dark") ? "☀️ Light" : "🌙 Dark";
+    if(b) b.textContent = (t==="dark") ? "Light" : "Dark";
     try{localStorage.setItem(TKEY,t);}catch(e){}
   }
   function toggleTheme(){
@@ -478,14 +482,14 @@
     vocab: [
       {k:"term", ph:"las patatas bravas", w:"1.3fr", label:"Word / phrase"},
       {k:"translation", ph:"spicy potatoes", w:"1.3fr", label:"Translation"},
-      {k:"image", ph:"🥔 or emoji/name", w:".9fr", label:"Image (emoji)"},
+      {k:"image", ph:"or emoji/name", w:".9fr", label:"Image (emoji)"},
       {k:"anim", ph:"", w:"1fr", label:"Animation", opts:ANIMS}
     ],
     chunks: [
       {k:"chunk", ph:"¿me pone…?", w:"1.2fr", label:"Chunk / expression"},
       {k:"meaning", ph:"could I have…?", w:"1.5fr", label:"Meaning"},
       {k:"func", ph:"requesting politely", w:"1.1fr", label:"Pragmatic function"},
-      {k:"image", ph:"🙏", w:".6fr", label:"Emoji"},
+      {k:"image", ph:"", w:".6fr", label:"Emoji"},
       {k:"anim", ph:"", w:"1fr", label:"Animation", opts:ANIMS}
     ],
     dialogue: [
@@ -507,8 +511,8 @@
       {k:"prompt", ph:"Record a 1-min travel vlog: how was your day in Barcelona?", w:"1fr", label:"Oral prompt"}
     ],
     culture: [
-      {k:"category", ph:"", w:"1fr", label:"Category", opts:["🎨 Art","🍽️ Food","🏛️ Culture","✨ Curiosidad","💬 Pragmática"]},
-      {k:"icon", ph:"📍", w:".5fr", label:"Icon"},
+      {k:"category", ph:"", w:"1fr", label:"Category", opts:["Art","Food","Culture","Curiosidad","Pragmática"]},
+      {k:"icon", ph:"", w:".5fr", label:"Icon"},
       {k:"title", ph:"1.2 km de historia", w:"1.2fr", label:"Title"},
       {k:"fact", ph:"La Rambla runs 1.2 km from Plaça de Catalunya to the port…", w:"2.3fr", label:"Fact / what it teaches"}
     ]
@@ -615,7 +619,7 @@
   const LP_BARCELONA = {
     title:"De Tapas Por La Rambla",
     genre:"Ordering food & drinks at a tapas bar",
-    city:"Barcelona", country:"Spain", flag:"🇪🇸", level:"A1–A2",
+    city:"Barcelona", country:"Spain", flag:"", level:"A1–A2",
     language:"Spanish", langCode:"es-ES", duration:"10",
     obj_statement:"Order food & drinks at a Spanish bar like a local",
     obj_benefit:"…so you never freeze at a counter in Barcelona again.",
@@ -625,7 +629,7 @@
     c_cognition:"Choosing register & quantities (polite vs. blunt)",
     c_culture:"La Rambla, La Boquería, Miró; bar etiquette (“nos pone…”, not “quiero”)",
     n_hook:"You step off the metro onto La Rambla — sunlight, chatter, the smell of pan con tomate. You’re hungry and don’t speak much Spanish yet. Time to order like a local.",
-    n_from:"Hitchhiker", n_to:"Travel Ambassador", n_mentor:"Grace 🌊",
+    n_from:"Hitchhiker", n_to:"Travel Ambassador", n_mentor:"Grace ",
     m_npc:"Camarero (waiter)", m_goal:"Order ≥2 tapas + ≥2 drinks politely", m_energy:"3",
     m_freeScript:`Step 1 — Camarero: “¡Buenas tardes! ¿Qué os pongo?”
  • greeting + “nos pone…” + “por favor” → serve ✓
@@ -650,22 +654,22 @@ RULES:
     m_success:"Complete polite order (≥2 tapas + ≥2 drinks) with greeting & “por favor”, energy > 0 → <MISSION_COMPLETE>",
     r_written:"Write a short postcard to a friend about your tapas adventure (2–3 sentences).",
     r_rubric:"≥8 words · ≥1 target word (patatas, tortilla, cerveza…) · correct spelling & agreement (patatas bravas)",
-    rw_coins:"140", rw_stamp:"Barcelona 🇪🇸",
-    rw_souvenir:"Miró tile", rw_souvenirImg:"🎨", rw_souvenirCost:"40",
+    rw_coins:"140", rw_stamp:"Barcelona ",
+    rw_souvenir:"Miró tile", rw_souvenirImg:"", rw_souvenirCost:"40",
     rw_nextDest:"Sevilla (next destination)", rw_flightCost:"40",
     vocab:[
-      {term:"las patatas bravas",translation:"spicy potatoes",image:"🥔",anim:"popIn"},
-      {term:"la tortilla española",translation:"Spanish omelette",image:"🍳",anim:"flip"},
-      {term:"una cervecilla",translation:"a small beer",image:"🍺",anim:"bounce"},
-      {term:"los pinchos",translation:"bar snacks / tapas",image:"🍢",anim:"slideUp"},
-      {term:"el agua",translation:"water",image:"💧",anim:"zoom"},
-      {term:"la cuenta",translation:"the bill",image:"🧾",anim:"popIn"}
+      {term:"las patatas bravas",translation:"spicy potatoes",image:"",anim:"popIn"},
+      {term:"la tortilla española",translation:"Spanish omelette",image:"",anim:"flip"},
+      {term:"una cervecilla",translation:"a small beer",image:"",anim:"bounce"},
+      {term:"los pinchos",translation:"bar snacks / tapas",image:"",anim:"slideUp"},
+      {term:"el agua",translation:"water",image:"",anim:"zoom"},
+      {term:"la cuenta",translation:"the bill",image:"",anim:"popIn"}
     ],
     chunks:[
-      {chunk:"¿me pone…?",meaning:"could I have…?",func:"requesting",image:"🙏",anim:"popIn"},
-      {chunk:"nos pone…",meaning:"we’ll have… (for us)",func:"ordering",image:"🧑‍🤝‍🧑",anim:"slideUp"},
-      {chunk:"por favor",meaning:"please",func:"politeness",image:"✨",anim:"zoom"},
-      {chunk:"¿y para beber?",meaning:"and to drink?",func:"asking",image:"🥤",anim:"bounce"}
+      {chunk:"¿me pone…?",meaning:"could I have…?",func:"requesting",image:"",anim:"popIn"},
+      {chunk:"nos pone…",meaning:"we’ll have… (for us)",func:"ordering",image:"",anim:"slideUp"},
+      {chunk:"por favor",meaning:"please",func:"politeness",image:"",anim:"zoom"},
+      {chunk:"¿y para beber?",meaning:"and to drink?",func:"asking",image:"",anim:"bounce"}
     ],
     dialogue:[
       {speaker:"Camarero",text:"¡Buenas tardes! ¿Qué os pongo?"},
@@ -696,17 +700,17 @@ RULES:
       {prompt:"Call your mum: tell her one thing you tried in Barcelona."}
     ],
     culture:[
-      {category:"✨ Curiosidad",icon:"📍",title:"1.2 km de historia",fact:"La Rambla runs 1.2 km from Plaça de Catalunya to the port — once a stream bed, now Barcelona’s most famous promenade."},
-      {category:"🎨 Art",icon:"🎨",title:"Mosaico de Miró",fact:"Look down near Liceu metro — a round pavement mosaic by Joan Miró greets arrivals from the port."},
-      {category:"🍽️ Food",icon:"🍽️",title:"La Boquería",fact:"The Mercat de la Boquería has sold food since 1217 — jamón, fruit and seafood, right off La Rambla."},
-      {category:"💬 Pragmática",icon:"💬",title:"“Nos pone…”, not “quiero”",fact:"In Spain, ordering with “nos pone…” or “¿me pone…?” sounds far more natural and polite than “quiero…” (I want)."}
+      {category:"Curiosidad",icon:"",title:"1.2 km de historia",fact:"La Rambla runs 1.2 km from Plaça de Catalunya to the port — once a stream bed, now Barcelona’s most famous promenade."},
+      {category:"Art",icon:"",title:"Mosaico de Miró",fact:"Look down near Liceu metro — a round pavement mosaic by Joan Miró greets arrivals from the port."},
+      {category:"Food",icon:"",title:"La Boquería",fact:"The Mercat de la Boquería has sold food since 1217 — jamón, fruit and seafood, right off La Rambla."},
+      {category:"Pragmática",icon:"",title:"“Nos pone…”, not “quiero”",fact:"In Spain, ordering with “nos pone…” or “¿me pone…?” sounds far more natural and polite than “quiero…” (I want)."}
     ]
   };
 
   const LP_SEVILLA = {
     title:"De Bares por Santa Cruz",
     genre:"Ordering tapas & drinks in an Andalusian bar",
-    city:"Sevilla", country:"Spain", flag:"🇪🇸", level:"A1–A2",
+    city:"Sevilla", country:"Spain", flag:"", level:"A1–A2",
     language:"Spanish", langCode:"es-ES", duration:"10",
     obj_statement:"Order tapas & drinks in an Andalusian bar like a local",
     obj_benefit:"…so you can eat your way through Sevilla with confidence.",
@@ -716,7 +720,7 @@ RULES:
     c_cognition:"Choosing register; deciding what to order",
     c_culture:"Barrio de Santa Cruz, La Giralda, orange trees; “una caña”",
     n_hook:"You wander into the Barrio de Santa Cruz — orange trees, tiled patios, and the Giralda glowing above. It’s hot, and a cold caña is calling. Time to order, sevillano style.",
-    n_from:"Hitchhiker", n_to:"Travel Ambassador", n_mentor:"Grace 🌊",
+    n_from:"Hitchhiker", n_to:"Travel Ambassador", n_mentor:"Grace ",
     m_npc:"Camarero (waiter)", m_goal:"Order ≥2 tapas + ≥2 drinks politely", m_energy:"3",
     m_freeScript:`Step 1 — Camarero: “¡Hola! ¿Qué le pongo?”
  • greeting + “¿me pone…?” + “por favor” → serve ✓
@@ -741,22 +745,22 @@ RULES:
     m_success:"Complete polite order (≥2 tapas + ≥2 drinks) with greeting & “por favor”, energy > 0 → <MISSION_COMPLETE>",
     r_written:"Write a short postcard to a friend about your evening of tapas in Sevilla (2–3 sentences).",
     r_rubric:"≥8 words · ≥1 target word (salmorejo, pescaíto, caña, tinto…) · correct spelling & grammar (tinto de verano)",
-    rw_coins:"140", rw_stamp:"Sevilla 🇪🇸",
-    rw_souvenir:"Azulejo tile", rw_souvenirImg:"🔷", rw_souvenirCost:"40",
+    rw_coins:"140", rw_stamp:"Sevilla ",
+    rw_souvenir:"Azulejo tile", rw_souvenirImg:"", rw_souvenirCost:"40",
     rw_nextDest:"Next continent (locked · próximamente)", rw_flightCost:"40",
     vocab:[
-      {term:"el salmorejo",translation:"cold tomato soup",image:"🍅",anim:"popIn"},
-      {term:"el pescaíto frito",translation:"fried little fish",image:"🐟",anim:"slideUp"},
-      {term:"una caña",translation:"a small draught beer",image:"🍺",anim:"bounce"},
-      {term:"un tinto de verano",translation:"red wine with lemon soda",image:"🍷",anim:"flip"},
-      {term:"la tapa",translation:"a small dish",image:"🍽️",anim:"zoom"},
-      {term:"la cuenta",translation:"the bill",image:"🧾",anim:"popIn"}
+      {term:"el salmorejo",translation:"cold tomato soup",image:"",anim:"popIn"},
+      {term:"el pescaíto frito",translation:"fried little fish",image:"",anim:"slideUp"},
+      {term:"una caña",translation:"a small draught beer",image:"",anim:"bounce"},
+      {term:"un tinto de verano",translation:"red wine with lemon soda",image:"",anim:"flip"},
+      {term:"la tapa",translation:"a small dish",image:"",anim:"zoom"},
+      {term:"la cuenta",translation:"the bill",image:"",anim:"popIn"}
     ],
     chunks:[
-      {chunk:"¿me pone…?",meaning:"could I have…?",func:"requesting",image:"🙏",anim:"popIn"},
-      {chunk:"para mí, …",meaning:"for me, …",func:"ordering",image:"🙋",anim:"slideUp"},
-      {chunk:"¿qué me recomienda?",meaning:"what do you recommend?",func:"asking advice",image:"🤔",anim:"bounce"},
-      {chunk:"por favor",meaning:"please",func:"politeness",image:"✨",anim:"zoom"}
+      {chunk:"¿me pone…?",meaning:"could I have…?",func:"requesting",image:"",anim:"popIn"},
+      {chunk:"para mí, …",meaning:"for me, …",func:"ordering",image:"",anim:"slideUp"},
+      {chunk:"¿qué me recomienda?",meaning:"what do you recommend?",func:"asking advice",image:"",anim:"bounce"},
+      {chunk:"por favor",meaning:"please",func:"politeness",image:"",anim:"zoom"}
     ],
     dialogue:[
       {speaker:"Camarero",text:"¡Hola! ¿Qué le pongo?"},
@@ -787,10 +791,10 @@ RULES:
       {prompt:"Call your mum: tell her about the Giralda and your favourite tapa."}
     ],
     culture:[
-      {category:"🏛️ Culture",icon:"🏰",title:"La Giralda",fact:"Seville’s bell tower began as the minaret of a 12th-century mosque — climb its ramps (no stairs!) for a rooftop view."},
-      {category:"✨ Curiosidad",icon:"🍊",title:"Naranjos por todas partes",fact:"Those orange trees lining the streets are bitter Seville oranges — famous for British marmalade, too sour to eat raw!"},
-      {category:"🍽️ Food",icon:"🍅",title:"Salmorejo vs gazpacho",fact:"Salmorejo is a thicker, creamier cousin of gazpacho, topped with jamón and egg — pure Córdoba–Sevilla summer."},
-      {category:"💬 Pragmática",icon:"💬",title:"“Una caña”, por favor",fact:"Order a small draught beer as “una caña” — asking for “una cerveza” is fine, but locals almost always say “una caña”."}
+      {category:"Culture",icon:"",title:"La Giralda",fact:"Seville’s bell tower began as the minaret of a 12th-century mosque — climb its ramps (no stairs!) for a rooftop view."},
+      {category:"Curiosidad",icon:"",title:"Naranjos por todas partes",fact:"Those orange trees lining the streets are bitter Seville oranges — famous for British marmalade, too sour to eat raw!"},
+      {category:"Food",icon:"",title:"Salmorejo vs gazpacho",fact:"Salmorejo is a thicker, creamier cousin of gazpacho, topped with jamón and egg — pure Córdoba–Sevilla summer."},
+      {category:"Pragmática",icon:"",title:"“Una caña”, por favor",fact:"Order a small draught beer as “una caña” — asking for “una cerveza” is fine, but locals almost always say “una caña”."}
     ]
   };
 
