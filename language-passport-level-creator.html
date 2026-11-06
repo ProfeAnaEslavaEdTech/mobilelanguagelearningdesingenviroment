@@ -11,7 +11,7 @@
   contributions of their respective authors (see the "Theoretical framework &
   attributions" panel). The Curriculum's original contribution is the synthesis.
 -->
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,6 +47,9 @@
        font-family:'Inter',"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
        font-size:15px;line-height:1.5}
   .wrap{max-width:940px;margin:0 auto;padding:0 16px 60px}
+  .lang-es{display:none}
+  :root[data-lang="es"] .lang-en{display:none}
+  :root[data-lang="es"] .lang-es{display:inline}
 
   /* Header */
   header{background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#fff;
@@ -173,107 +176,121 @@
 <header>
   <div class="inner">
     
-    <p class="kick">Mobile Language Learning Design Environment (MLLDE) · Lesson Builder</p>
-    <h1>Language Passport — Lesson Builder</h1>
-    <p>This page opens <b>blank</b> — fill it top-to-bottom to author a <b>new lesson</b>, then
+    <p class="kick"><span class="lang-en">Mobile Language Learning Design Environment (MLLDE) · Lesson Builder</span><span class="lang-es">Mobile Language Learning Design Environment (MLLDE) · Constructor de lecciones</span></p>
+    <h1><span class="lang-en">Language Passport — Lesson Builder</span><span class="lang-es">Language Passport — Constructor de lecciones</span></h1>
+    <p><span class="lang-en">This page opens <b>blank</b> — fill it top-to-bottom to author a <b>new lesson</b>, then
        <b>Save (JSON)</b>. Need a model? Load the <b>Barcelona</b> or <b>Sevilla</b> example from the toolbar
-       to see a complete unit, then <b>Clear all</b> to start your own.</p>
+       to see a complete unit, then <b>Clear all</b> to start your own.</span><span class="lang-es">Esta página abre <b>en blanco</b> — complétala de arriba abajo para crear una <b>lección nueva</b> y luego
+       <b>Guardar (JSON)</b>. ¿Necesitas un modelo? Carga el ejemplo de <b>Barcelona</b> o <b>Sevilla</b> desde la barra
+       para ver una unidad completa y luego <b>Borrar todo</b> para empezar la tuya.</span></p>
   </div>
 </header>
 
 <div class="toolbar">
   <div class="inner">
-    <button class="btn-primary" onclick="downloadJSON()">Save (JSON)</button>
-    <button class="btn-ghost" onclick="document.getElementById('loader').click()">Load</button>
+    <button class="btn-primary" onclick="downloadJSON()"><span class="lang-en">Save (JSON)</span><span class="lang-es">Guardar (JSON)</span></button>
+    <button class="btn-ghost" onclick="document.getElementById('loader').click()"><span class="lang-en">Load</span><span class="lang-es">Cargar</span></button>
     <input id="loader" type="file" accept="application/json" style="display:none" onchange="loadJSON(event)">
-    <button class="btn-amber" onclick="window.print()">Print / PDF</button>
-    <button class="btn-ghost" onclick="loadUnit('bcn')" title="Load the Barcelona example (replaces the form)">Barcelona example</button>
-    <button class="btn-ghost" onclick="loadUnit('sev')" title="Load the Sevilla example (replaces the form)">Sevilla example</button>
+    <button class="btn-amber" onclick="window.print()"><span class="lang-en">Print / PDF</span><span class="lang-es">Imprimir / PDF</span></button>
+    <button class="btn-ghost" onclick="loadUnit('bcn')" title="Cargar el ejemplo de Barcelona (reemplaza el formulario)"><span class="lang-en">Barcelona example</span><span class="lang-es">Ejemplo Barcelona</span></button>
+    <button class="btn-ghost" onclick="loadUnit('sev')" title="Cargar el ejemplo de Sevilla (reemplaza el formulario)"><span class="lang-en">Sevilla example</span><span class="lang-es">Ejemplo Sevilla</span></button>
     <span class="sp"></span>
-    <button class="btn-ghost" id="themeBtn" onclick="toggleTheme()" title="Toggle light / dark">Dark</button>
-    <button class="btn-danger" onclick="clearAll()">Clear all</button>
+    <button class="btn-ghost" id="langBtn" onclick="toggleLang()" title="Cambiar idioma / Switch language"><span class="lang-en">ES</span><span class="lang-es">EN</span></button>
+    <button class="btn-ghost" id="themeBtn" onclick="toggleTheme()" title="Toggle light / dark"></button>
+    <button class="btn-danger" onclick="clearAll()"><span class="lang-en">Clear all</span><span class="lang-es">Borrar todo</span></button>
   </div>
 </div>
 
 <div class="wrap">
   <div class="intro">
-    <b>How to use:</b> work top-to-bottom. Set the <b>lesson length</b> in §1 — the guide shows how
+    <span class="lang-en"><b>How to use:</b> work top-to-bottom. Set the <b>lesson length</b> in §1 — the guide shows how
     much content to add. Use <b>+ Add</b> to grow the lists (vocabulary, chunks, dialogue, drills,
     culture cards…). Hit <b>Save (JSON)</b> to keep your work or hand it off for the build; <b>Load</b>
     to resume. Your progress also auto-saves in this browser. Fields marked
-    <span style="color:#dc2626">*</span> are the minimum to build a lesson.
+    <span style="color:#dc2626">*</span> are the minimum to build a lesson.</span><span class="lang-es"><b>Cómo usarla:</b> trabaja de arriba abajo. Fija la <b>duración de la lección</b> en §1 — la guía indica
+    cuánto contenido añadir. Usa <b>+ Añadir</b> para ampliar las listas (vocabulario, chunks, diálogo, ejercicios,
+    tarjetas de cultura…). Pulsa <b>Guardar (JSON)</b> para conservar tu trabajo o entregarlo para la construcción; <b>Cargar</b>
+    para retomarlo. Tu progreso también se autoguarda en este navegador. Los campos marcados con
+    <span style="color:#dc2626">*</span> son el mínimo para construir una lección.</span>
   </div>
 
   <!-- Theoretical framework & attributions -->
   <details class="framework">
-    <summary>Theoretical framework &amp; attributions — the scholars behind this method</summary>
+    <summary><span class="lang-en">Theoretical framework &amp; attributions — the scholars behind this method</span><span class="lang-es">Marco teórico y atribuciones — los estudiosos detrás de este método</span></summary>
     <div class="fw-body">
-      <p class="fw-note">This Curriculum stands on established scholarly frameworks and design
+      <p class="fw-note"><span class="lang-en">This Curriculum stands on established scholarly frameworks and design
         standards. Each method below is credited to its originator, out of respect for their teaching
         and design approaches. The Curriculum's own contribution is the <b>synthesis</b> of these
         approaches into one mobile, gamified language-learning method — that synthesis is the
         copyrighted work (see LICENSE); the underlying frameworks remain the intellectual
-        contributions of their respective authors.</p>
+        contributions of their respective authors.</span><span class="lang-es">Este currículo se apoya en marcos académicos y estándares de diseño consolidados.
+        Cada método de abajo se atribuye a su autor original, por respeto a sus enfoques de enseñanza
+        y diseño. La aportación propia del currículo es la <b>síntesis</b> de estos enfoques en un único
+        método de aprendizaje de idiomas móvil y gamificado — esa síntesis es la obra protegida por
+        derechos de autor (véase LICENSE); los marcos subyacentes siguen siendo la contribución
+        intelectual de sus respectivos autores.</span></p>
       <div class="fw-scroll">
         <table class="fw-table">
-          <thead><tr><th>Method / approach</th><th>Attributed to</th><th>Year</th><th>Role in this Curriculum</th></tr></thead>
+          <thead><tr><th><span class="lang-en">Method / approach</span><span class="lang-es">Método / enfoque</span></th><th><span class="lang-en">Attributed to</span><span class="lang-es">Atribuido a</span></th><th><span class="lang-en">Year</span><span class="lang-es">Año</span></th><th><span class="lang-en">Role in this Curriculum</span><span class="lang-es">Rol en este currículo</span></th></tr></thead>
           <tbody>
-            <tr><td class="m">Successive Approximation Model (SAM)</td><td class="who">Michael W. Allen (with R. Sites)</td><td>2012</td><td>Agile build cycle: Preparation · Savvy Start · Alpha/Beta/Gold</td></tr>
-            <tr><td class="m">Gamified CLIL — four-ring gamification (G-CLIL)</td><td class="who">Ricardo Casañ-Pitarch</td><td>2017</td><td>Game mechanics as language tasks; disciplinary-genre engine</td></tr>
-            <tr><td class="m">CLIL 4Cs (Content · Communication · Cognition · Culture)</td><td class="who">Do Coyle</td><td>2007</td><td>Every lesson touches all four Cs</td></tr>
-            <tr><td class="m">Input–Processing–Output (IPO)</td><td class="who">Ricardo Casañ-Pitarch</td><td>2017</td><td>Session flow: encounter → manipulate → deploy</td></tr>
-            <tr><td class="m">Engage–Study–Activate (ESA)</td><td class="who">Jeremy Harmer</td><td>2007</td><td>Session sequencing (Straight Arrow / Boomerang / Patchwork)</td></tr>
-            <tr><td class="m">Contextual Teaching &amp; Learning (CTL, 8 components)</td><td class="who">Elaine B. Johnson</td><td>2002</td><td>Meaningful, brain-compatible learning + authentic assessment</td></tr>
-            <tr><td class="m">REACT strategies</td><td class="who">CORD — Michael L. Crawford</td><td>2001</td><td>Relating · Experiencing · Applying · Cooperating · Transferring</td></tr>
-            <tr><td class="m">Multimedia &amp; dual-coding principles</td><td class="who">Richard E. Mayer</td><td>2001 / 2009</td><td>Animated vocab images; the hint replays the same cue (§5)</td></tr>
-            <tr><td class="m">Lexical Approach — chunks &amp; collocations</td><td class="who">Michael Lewis</td><td>1993</td><td>Teaching formulaic “chunks of words” (§6)</td></tr>
-            <tr><td class="m">Interlanguage pragmatics — pragmatic competence</td><td class="who">Kasper &amp; Rose</td><td>2001</td><td>Culture &amp; pragmatics cards teach appropriate use in context</td></tr>
-            <tr><td class="m">Bloom’s taxonomy (adapted)</td><td class="who">B. Bloom; rev. Anderson &amp; Krathwohl</td><td>1956 / 2001</td><td>Objective verbs &amp; cognitive levels</td></tr>
-            <tr><td class="m">Communicative Language Teaching (CLT)</td><td class="who">Hymes; Canale &amp; Swain (tradition)</td><td>1972 / 1980</td><td>Real-world communicative tasks (basis of the original De Tapas lesson)</td></tr>
-            <tr><td class="m">Mobile Learning Design — <i>Mastering Mobile Learning Design</i> (Routledge)</td><td class="who">Paul Clothier</td><td>2026</td><td>Brevity · microlearning · empathy · context-driven design</td></tr>
-            <tr><td class="m">GenAI competency (empirical evidence)</td><td class="who">Asynchronous genAI-module study</td><td>2026</td><td>Support for learn-by-doing + scaffolding; equitable gains</td></tr>
-            <tr><td class="m">Apple Human Interface Guidelines</td><td class="who">Apple Inc.</td><td>2025</td><td>iOS UX standards (clarity, depth, deference)</td></tr>
-            <tr><td class="m">Material Design</td><td class="who">Google</td><td>2025</td><td>Android UX standards (meaningful motion, hierarchy)</td></tr>
-            <tr><td class="m">Responsible Human–AI Collaboration &amp; AWJ precedent</td><td class="who">Ana Eslava-Graterol (The Academic Writing Journey)</td><td>2025</td><td>AI-mentor scaffolding; identity-arc precedent</td></tr>
+            <tr><td class="m">Successive Approximation Model (SAM)</td><td class="who">Michael W. Allen (with R. Sites)</td><td>2012</td><td><span class="lang-en">Agile build cycle: Preparation · Savvy Start · Alpha/Beta/Gold</span><span class="lang-es">Ciclo ágil de construcción: Preparación · Savvy Start · Alfa/Beta/Gold</span></td></tr>
+            <tr><td class="m">Gamified CLIL — four-ring gamification (G-CLIL)</td><td class="who">Ricardo Casañ-Pitarch</td><td>2017</td><td><span class="lang-en">Game mechanics as language tasks; disciplinary-genre engine</span><span class="lang-es">Mecánicas de juego como tareas de lengua; motor de género disciplinar</span></td></tr>
+            <tr><td class="m">CLIL 4Cs (Content · Communication · Cognition · Culture)</td><td class="who">Do Coyle</td><td>2007</td><td><span class="lang-en">Every lesson touches all four Cs</span><span class="lang-es">Cada lección toca las cuatro Ces</span></td></tr>
+            <tr><td class="m">Input–Processing–Output (IPO)</td><td class="who">Ricardo Casañ-Pitarch</td><td>2017</td><td><span class="lang-en">Session flow: encounter → manipulate → deploy</span><span class="lang-es">Flujo de sesión: encuentro → manipulación → despliegue</span></td></tr>
+            <tr><td class="m">Engage–Study–Activate (ESA)</td><td class="who">Jeremy Harmer</td><td>2007</td><td><span class="lang-en">Session sequencing (Straight Arrow / Boomerang / Patchwork)</span><span class="lang-es">Secuenciación de la sesión (Straight Arrow / Boomerang / Patchwork)</span></td></tr>
+            <tr><td class="m">Contextual Teaching &amp; Learning (CTL, 8 components)</td><td class="who">Elaine B. Johnson</td><td>2002</td><td><span class="lang-en">Meaningful, brain-compatible learning + authentic assessment</span><span class="lang-es">Aprendizaje significativo y compatible con el cerebro + evaluación auténtica</span></td></tr>
+            <tr><td class="m">REACT strategies</td><td class="who">CORD — Michael L. Crawford</td><td>2001</td><td><span class="lang-en">Relating · Experiencing · Applying · Cooperating · Transferring</span><span class="lang-es">Relacionar · Experimentar · Aplicar · Cooperar · Transferir</span></td></tr>
+            <tr><td class="m">Multimedia &amp; dual-coding principles</td><td class="who">Richard E. Mayer</td><td>2001 / 2009</td><td><span class="lang-en">Animated vocab images; the hint replays the same cue (§5)</span><span class="lang-es">Imágenes de vocabulario animadas; la pista repite la misma señal (§5)</span></td></tr>
+            <tr><td class="m">Lexical Approach — chunks &amp; collocations</td><td class="who">Michael Lewis</td><td>1993</td><td><span class="lang-en">Teaching formulaic “chunks of words” (§6)</span><span class="lang-es">Enseñanza de “chunks de palabras” formulaicos (§6)</span></td></tr>
+            <tr><td class="m">Interlanguage pragmatics — pragmatic competence</td><td class="who">Kasper &amp; Rose</td><td>2001</td><td><span class="lang-en">Culture &amp; pragmatics cards teach appropriate use in context</span><span class="lang-es">Las tarjetas de cultura y pragmática enseñan el uso apropiado en contexto</span></td></tr>
+            <tr><td class="m">Bloom’s taxonomy (adapted)</td><td class="who">B. Bloom; rev. Anderson &amp; Krathwohl</td><td>1956 / 2001</td><td><span class="lang-en">Objective verbs &amp; cognitive levels</span><span class="lang-es">Verbos de objetivos y niveles cognitivos</span></td></tr>
+            <tr><td class="m">Communicative Language Teaching (CLT)</td><td class="who">Hymes; Canale &amp; Swain (tradition)</td><td>1972 / 1980</td><td><span class="lang-en">Real-world communicative tasks (basis of the original De Tapas lesson)</span><span class="lang-es">Tareas comunicativas del mundo real (base de la lección original De Tapas)</span></td></tr>
+            <tr><td class="m">Mobile Learning Design — <i>Mastering Mobile Learning Design</i> (Routledge)</td><td class="who">Paul Clothier</td><td>2026</td><td><span class="lang-en">Brevity · microlearning · empathy · context-driven design</span><span class="lang-es">Brevedad · microlearning · empatía · diseño guiado por el contexto</span></td></tr>
+            <tr><td class="m">GenAI competency (empirical evidence)</td><td class="who">Asynchronous genAI-module study</td><td>2026</td><td><span class="lang-en">Support for learn-by-doing + scaffolding; equitable gains</span><span class="lang-es">Apoyo al aprender-haciendo + andamiaje; mejoras equitativas</span></td></tr>
+            <tr><td class="m">Apple Human Interface Guidelines</td><td class="who">Apple Inc.</td><td>2025</td><td><span class="lang-en">iOS UX standards (clarity, depth, deference)</span><span class="lang-es">Estándares UX de iOS (claridad, profundidad, deferencia)</span></td></tr>
+            <tr><td class="m">Material Design</td><td class="who">Google</td><td>2025</td><td><span class="lang-en">Android UX standards (meaningful motion, hierarchy)</span><span class="lang-es">Estándares UX de Android (movimiento con sentido, jerarquía)</span></td></tr>
+            <tr><td class="m">Responsible Human–AI Collaboration &amp; AWJ precedent</td><td class="who">Ana Eslava-Graterol (The Academic Writing Journey)</td><td>2025</td><td><span class="lang-en">AI-mentor scaffolding; identity-arc precedent</span><span class="lang-es">Andamiaje con mentor IA; precedente de arco de identidad</span></td></tr>
           </tbody>
         </table>
       </div>
-      <p class="fw-src">Source matrix: <i>Educational Resources and Research on Digital Learning</i>
+      <p class="fw-src"><span class="lang-en">Source matrix: <i>Educational Resources and Research on Digital Learning</i>
         (stored under <code>docs/sources/</code>); years are indicative — full bibliographic detail lives
-        in that workbook and the project blueprint. Third-party frameworks remain their respective authors.</p>
+        in that workbook and the project blueprint. Third-party frameworks remain their respective authors.</span><span class="lang-es">Matriz de fuentes: <i>Educational Resources and Research on Digital Learning</i>
+        (en <code>docs/sources/</code>); los años son orientativos — el detalle bibliográfico completo está
+        en ese cuaderno y en el blueprint del proyecto. Los marcos de terceros siguen siendo de sus respectivos autores.</span></p>
     </div>
   </details>
 
   <!-- 1. Destination basics -->
   <section class="card">
-    <h2><span class="n">1</span> Lesson basics</h2>
-    <p class="tie">G-CLIL Ring 1 — <b class="who">Casañ-Pitarch, 2017</b> · disciplinary genre / real-world scenario</p>
+    <h2><span class="n">1</span> <span class="lang-en">Lesson basics</span><span class="lang-es">Datos básicos de la lección</span></h2>
+    <p class="tie">G-CLIL Ring 1 — <b class="who">Casañ-Pitarch, 2017</b> · <span class="lang-en">disciplinary genre / real-world scenario</span><span class="lang-es">género disciplinar / escenario del mundo real</span></p>
     <div class="grid g2">
-      <label class="field">Lesson title <span class="req">*</span>
+      <label class="field"><span class="lang-en">Lesson title</span><span class="lang-es">Título de la lección</span> <span class="req">*</span>
         <input data-field="title" placeholder="e.g. De Tapas Por La Rambla">
       </label>
-      <label class="field">Real-world scenario / disciplinary genre <span class="req">*</span>
+      <label class="field"><span class="lang-en">Real-world scenario / disciplinary genre</span><span class="lang-es">Escenario del mundo real / género disciplinar</span> <span class="req">*</span>
         <input data-field="genre" placeholder="e.g. Ordering food &amp; drinks at a tapas bar">
       </label>
     </div>
     <div class="grid g4" style="margin-top:14px">
-      <label class="field">City <input data-field="city" placeholder="Barcelona"></label>
-      <label class="field">Country <input data-field="country" placeholder="Spain"></label>
-      <label class="field">Flag emoji <input data-field="flag" placeholder=""></label>
-      <label class="field">CEFR level <input data-field="level" placeholder="A1–A2"></label>
+      <label class="field"><span class="lang-en">City</span><span class="lang-es">Ciudad</span> <input data-field="city" placeholder="Barcelona"></label>
+      <label class="field"><span class="lang-en">Country</span><span class="lang-es">País</span> <input data-field="country" placeholder="Spain"></label>
+      <label class="field"><span class="lang-en">Flag emoji</span><span class="lang-es">Emoji de bandera</span> <input data-field="flag" placeholder=""></label>
+      <label class="field"><span class="lang-en">CEFR level</span><span class="lang-es">Nivel MCER</span> <input data-field="level" placeholder="A1–A2"></label>
     </div>
     <div class="grid g2" style="margin-top:14px">
-      <label class="field">Target language <input data-field="language" placeholder="Spanish"></label>
-      <label class="field">Speech code (BCP-47) <small>for TTS / speech recognition</small>
+      <label class="field"><span class="lang-en">Target language</span><span class="lang-es">Lengua meta</span> <input data-field="language" placeholder="Spanish"></label>
+      <label class="field"><span class="lang-en">Speech code (BCP-47)</span><span class="lang-es">Código de voz (BCP-47)</span> <small><span class="lang-en">for TTS / speech recognition</span><span class="lang-es">para TTS / reconocimiento de voz</span></small>
         <input data-field="langCode" placeholder="es-ES"></label>
     </div>
     <div style="margin-top:16px" class="dur-wrap">
-      <label class="field" style="min-width:150px">Lesson length <span class="req">*</span>
-        <small>microlearning extended</small>
+      <label class="field" style="min-width:150px"><span class="lang-en">Lesson length</span><span class="lang-es">Duración de la lección</span> <span class="req">*</span>
+        <small><span class="lang-en">microlearning → extended</span><span class="lang-es">microlearning → ampliada</span></small>
         <select data-field="duration" id="duration" onchange="updateDurGuide()">
-          <option value="5">5 minutes</option>
-          <option value="10">10 minutes</option>
-          <option value="15">15 minutes</option>
+          <option value="5">5 min</option>
+          <option value="10">10 min</option>
+          <option value="15">15 min</option>
         </select>
       </label>
       <div class="dur-guide" id="durGuide"></div>
@@ -282,17 +299,17 @@
 
   <!-- 2. Objective -->
   <section class="card">
-    <h2><span class="n">2</span> Learning objective</h2>
-    <p class="tie">CTL — <b class="who">Johnson, 2002</b> · action-verb objective + benefit + authentic “excellent achievement”</p>
+    <h2><span class="n">2</span> <span class="lang-en">Learning objective</span><span class="lang-es">Objetivo de aprendizaje</span></h2>
+    <p class="tie">CTL — <b class="who">Johnson, 2002</b> · <span class="lang-en">action-verb objective + benefit + authentic “excellent achievement”</span><span class="lang-es">objetivo con verbo de acción + beneficio + “logro excelente” auténtico</span></p>
     <div class="grid">
-      <label class="field">Objective — use an active verb <span class="req">*</span>
-        <small>“demonstrate”, “order”, “explain”… (Bloom — Bloom / Anderson &amp; Krathwohl)</small>
+      <label class="field"><span class="lang-en">Objective — use an active verb</span><span class="lang-es">Objetivo — usa un verbo activo</span> <span class="req">*</span>
+        <small><span class="lang-en">“demonstrate”, “order”, “explain”… (Bloom — Bloom / Anderson &amp; Krathwohl)</span><span class="lang-es">“demostrar”, “pedir”, “explicar”… (Bloom — Bloom / Anderson &amp; Krathwohl)</span></small>
         <input data-field="obj_statement" placeholder="Order food and drinks at a Spanish bar like a local">
       </label>
-      <label class="field">Benefit — why it matters to the learner
+      <label class="field"><span class="lang-en">Benefit — why it matters to the learner</span><span class="lang-es">Beneficio — por qué le importa al alumno</span>
         <input data-field="obj_benefit" placeholder="…so you never freeze at a counter in Barcelona again">
       </label>
-      <label class="field">What counts as “excellent achievement”?
+      <label class="field"><span class="lang-en">What counts as “excellent achievement”?</span><span class="lang-es">¿Qué cuenta como “logro excelente”?</span>
         <input data-field="obj_excellent" placeholder="Complete order + correct register (nos pone…) + no energy lost">
       </label>
     </div>
@@ -300,110 +317,110 @@
 
   <!-- 3. CLIL 4Cs -->
   <section class="card">
-    <h2><span class="n">3</span> CLIL 4 Cs</h2>
-    <p class="tie">CLIL 4Cs — <b class="who">Coyle, 2007</b> · every lesson should touch all four</p>
+    <h2><span class="n">3</span> <span class="lang-en">CLIL 4 Cs</span><span class="lang-es">Las 4 Ces del CLIL</span></h2>
+    <p class="tie">CLIL 4Cs — <b class="who">Coyle, 2007</b> · <span class="lang-en">every lesson should touch all four</span><span class="lang-es">cada lección debería tocar las cuatro</span></p>
     <div class="grid g2">
-      <label class="field">Content <input data-field="c_content" placeholder="Tapas &amp; drinks vocabulary"></label>
-      <label class="field">Communication <input data-field="c_communication" placeholder="Requesting, ordering politely"></label>
-      <label class="field">Cognition <input data-field="c_cognition" placeholder="Choosing register &amp; quantities"></label>
-      <label class="field">Culture <input data-field="c_culture" placeholder="La Rambla, bar etiquette"></label>
+      <label class="field"><span class="lang-en">Content</span><span class="lang-es">Contenido</span> <input data-field="c_content" placeholder="Tapas &amp; drinks vocabulary"></label>
+      <label class="field"><span class="lang-en">Communication</span><span class="lang-es">Comunicación</span> <input data-field="c_communication" placeholder="Requesting, ordering politely"></label>
+      <label class="field"><span class="lang-en">Cognition</span><span class="lang-es">Cognición</span> <input data-field="c_cognition" placeholder="Choosing register &amp; quantities"></label>
+      <label class="field"><span class="lang-en">Culture</span><span class="lang-es">Cultura</span> <input data-field="c_culture" placeholder="La Rambla, bar etiquette"></label>
     </div>
   </section>
 
   <!-- 4. Narrative & identity -->
   <section class="card">
-    <h2><span class="n">4</span> Narrative &amp; identity</h2>
-    <p class="tie">G-CLIL Ring 3 — <b class="who">Casañ-Pitarch, 2017</b> · narrative transportation + identity arc + AI mentor <b class="who">(AWJ, 2025)</b></p>
+    <h2><span class="n">4</span> <span class="lang-en">Narrative &amp; identity</span><span class="lang-es">Narrativa e identidad</span></h2>
+    <p class="tie">G-CLIL Ring 3 — <b class="who">Casañ-Pitarch, 2017</b> · <span class="lang-en">narrative transportation + identity arc + AI mentor</span><span class="lang-es">transporte narrativo + arco de identidad + mentor IA</span> <b class="who">(AWJ, 2025)</b></p>
     <div class="grid">
-      <label class="field">Arrival hook — the opening scene
+      <label class="field"><span class="lang-en">Arrival hook — the opening scene</span><span class="lang-es">Gancho de llegada — la escena inicial</span>
         <textarea data-field="n_hook" placeholder="You step off the train onto La Rambla, hungry and a little lost…"></textarea>
       </label>
     </div>
     <div class="grid g3" style="margin-top:14px">
-      <label class="field">Identity — FROM <input data-field="n_from" placeholder="Hitchhiker"></label>
-      <label class="field">Identity — TO <input data-field="n_to" placeholder="Travel Ambassador"></label>
-      <label class="field">Mentor name + emoji <input data-field="n_mentor" placeholder="Guía Marta "></label>
+      <label class="field"><span class="lang-en">Identity — FROM</span><span class="lang-es">Identidad — DESDE</span> <input data-field="n_from" placeholder="Hitchhiker"></label>
+      <label class="field"><span class="lang-en">Identity — TO</span><span class="lang-es">Identidad — HACIA</span> <input data-field="n_to" placeholder="Travel Ambassador"></label>
+      <label class="field"><span class="lang-en">Mentor name + emoji</span><span class="lang-es">Nombre del mentor + emoji</span> <input data-field="n_mentor" placeholder="Guía Marta "></label>
     </div>
   </section>
 
   <!-- 5. Vocabulary -->
   <section class="card">
-    <h2><span class="n">5</span> Vocabulary — animated images</h2>
-    <p class="tie">IPO Input — <b class="who">Casañ-Pitarch, 2017</b> · dual-coding <b class="who">(Mayer)</b>: each word has an image + a named entrance animation the “hint” replays (§5). Add as many as the lesson length allows.</p>
+    <h2><span class="n">5</span> <span class="lang-en">Vocabulary — animated images</span><span class="lang-es">Vocabulario — imágenes animadas</span></h2>
+    <p class="tie">IPO Input — <b class="who">Casañ-Pitarch, 2017</b> · <span class="lang-en">dual-coding <b class="who">(Mayer)</b>: each word has an image + a named entrance animation the “hint” replays (§5). Add as many as the lesson length allows.</span><span class="lang-es">doble codificación <b class="who">(Mayer)</b>: cada palabra tiene una imagen + una animación de entrada con nombre que la “pista” repite (§5). Añade tantas como permita la duración de la lección.</span></p>
     <div class="rows" data-list="vocab"></div>
-    <button class="add" onclick="addRow('vocab')">+ Add vocabulary item</button>
+    <button class="add" onclick="addRow('vocab')"><span class="lang-en">+ Add vocabulary item</span><span class="lang-es">+ Añadir palabra</span></button>
   </section>
 
   <!-- 6. Lexical chunks -->
   <section class="card">
-    <h2><span class="n">6</span> Lexical chunks &amp; expressions</h2>
-    <p class="tie">Lexical Approach — <b class="who">Lewis, 1993</b> · ready-made “chunks of words” with their pragmatic function (requesting, thanking, softening…). These carry fluency and politeness.</p>
+    <h2><span class="n">6</span> <span class="lang-en">Lexical chunks &amp; expressions</span><span class="lang-es">Chunks léxicos y expresiones</span></h2>
+    <p class="tie">Lexical Approach — <b class="who">Lewis, 1993</b> · <span class="lang-en">ready-made “chunks of words” with their pragmatic function (requesting, thanking, softening…). These carry fluency and politeness.</span><span class="lang-es">“chunks de palabras” prefabricados con su función pragmática (pedir, agradecer, suavizar…). Son los que aportan fluidez y cortesía.</span></p>
     <div class="rows" data-list="chunks"></div>
-    <button class="add" onclick="addRow('chunks')">+ Add chunk / expression</button>
+    <button class="add" onclick="addRow('chunks')"><span class="lang-en">+ Add chunk / expression</span><span class="lang-es">+ Añadir chunk / expresión</span></button>
   </section>
 
   <!-- 7. Model dialogue -->
   <section class="card">
-    <h2><span class="n">7</span> Model dialogue</h2>
-    <p class="tie">IPO Input / ESA Study — <b class="who">Casañ-Pitarch; Harmer, 2007</b> · the example conversation (read aloud with TTS)</p>
+    <h2><span class="n">7</span> <span class="lang-en">Model dialogue</span><span class="lang-es">Diálogo modelo</span></h2>
+    <p class="tie">IPO Input / ESA Study — <b class="who">Casañ-Pitarch; Harmer, 2007</b> · <span class="lang-en">the example conversation (read aloud with TTS)</span><span class="lang-es">la conversación de ejemplo (leída en voz alta con TTS)</span></p>
     <div class="rows" data-list="dialogue"></div>
-    <button class="add" onclick="addRow('dialogue')">+ Add dialogue line</button>
+    <button class="add" onclick="addRow('dialogue')"><span class="lang-en">+ Add dialogue line</span><span class="lang-es">+ Añadir línea de diálogo</span></button>
   </section>
 
   <!-- 8. Processing drills -->
   <section class="card">
-    <h2><span class="n">8</span> Processing drills</h2>
-    <p class="tie">IPO Processing / ESA Study — <b class="who">Casañ-Pitarch; Harmer</b> · learners manipulate the language (earn coins )</p>
-    <h3 style="font-size:14px;color:var(--amber-d);margin:6px 0 2px">Gap-fill</h3>
-    <p class="tie" style="margin-left:0">Write the sentence, mark the blank with <code>___</code></p>
+    <h2><span class="n">8</span> <span class="lang-en">Processing drills</span><span class="lang-es">Ejercicios de procesamiento</span></h2>
+    <p class="tie">IPO Processing / ESA Study — <b class="who">Casañ-Pitarch; Harmer</b> · <span class="lang-en">learners manipulate the language (earn coins)</span><span class="lang-es">el alumno manipula la lengua (gana monedas)</span></p>
+    <h3 style="font-size:14px;color:var(--amber-d);margin:6px 0 2px"><span class="lang-en">Gap-fill</span><span class="lang-es">Rellenar huecos</span></h3>
+    <p class="tie" style="margin-left:0"><span class="lang-en">Write the sentence, mark the blank with <code>___</code></span><span class="lang-es">Escribe la frase y marca el hueco con <code>___</code></span></p>
     <div class="rows" data-list="gapfill"></div>
-    <button class="add" onclick="addRow('gapfill')">+ Add gap-fill sentence</button>
+    <button class="add" onclick="addRow('gapfill')"><span class="lang-en">+ Add gap-fill sentence</span><span class="lang-es">+ Añadir frase de hueco</span></button>
 
-    <h3 style="font-size:14px;color:var(--amber-d);margin:20px 0 2px">Drag-match pairs</h3>
+    <h3 style="font-size:14px;color:var(--amber-d);margin:20px 0 2px"><span class="lang-en">Drag-match pairs</span><span class="lang-es">Parejas para emparejar</span></h3>
     <div class="rows" data-list="dragmatch"></div>
-    <button class="add" onclick="addRow('dragmatch')">+ Add match pair</button>
+    <button class="add" onclick="addRow('dragmatch')"><span class="lang-en">+ Add match pair</span><span class="lang-es">+ Añadir pareja</span></button>
   </section>
 
   <!-- 9. NPC mission -->
   <section class="card">
-    <h2><span class="n">9</span> NPC mission — the assessment</h2>
-    <p class="tie">IPO Output / ESA Activate — <b class="who">Casañ-Pitarch; Harmer</b> · CTL authentic assessment <b class="who">(Johnson)</b> — perform before the energy meter empties</p>
+    <h2><span class="n">9</span> <span class="lang-en">NPC mission — the assessment</span><span class="lang-es">Misión con PNJ — la evaluación</span></h2>
+    <p class="tie">IPO Output / ESA Activate — <b class="who">Casañ-Pitarch; Harmer</b> · <span class="lang-en">CTL authentic assessment <b class="who">(Johnson)</b> — perform before the energy meter empties</span><span class="lang-es">evaluación auténtica CTL <b class="who">(Johnson)</b> — actúa antes de que se vacíe el medidor de energía</span></p>
     <div class="grid g3">
-      <label class="field">NPC name &amp; role <input data-field="m_npc" placeholder="Camarero (waiter)"></label>
-      <label class="field">Mission goal <input data-field="m_goal" placeholder="Order 2 tapas + 2 drinks correctly"></label>
-      <label class="field">Starting energy / hambre <input data-field="m_energy" type="number" placeholder="3"></label>
+      <label class="field"><span class="lang-en">NPC name &amp; role</span><span class="lang-es">Nombre y rol del PNJ</span> <input data-field="m_npc" placeholder="Camarero (waiter)"></label>
+      <label class="field"><span class="lang-en">Mission goal</span><span class="lang-es">Meta de la misión</span> <input data-field="m_goal" placeholder="Order 2 tapas + 2 drinks correctly"></label>
+      <label class="field"><span class="lang-en">Starting energy / hambre</span><span class="lang-es">Energía inicial / hambre</span> <input data-field="m_energy" type="number" placeholder="3"></label>
     </div>
     <div class="grid" style="margin-top:14px">
-      <label class="field">Free tier — branching script notes <span class="tier free">Free · offline</span>
-        <small>the scripted paths the camarero can take (what the learner might say → NPC reply)</small>
+      <label class="field"><span class="lang-en">Free tier — branching script notes</span><span class="lang-es">Nivel gratuito — notas de guion ramificado</span> <span class="tier free"><span class="lang-en">Free · offline</span><span class="lang-es">Gratis · sin conexión</span></span>
+        <small><span class="lang-en">the scripted paths the camarero can take (what the learner might say → NPC reply)</span><span class="lang-es">las rutas guionizadas que puede tomar el camarero (lo que diría el alumno → respuesta del PNJ)</span></small>
         <textarea data-field="m_freeScript" placeholder="If learner greets + orders politely → serve. If missing 'por favor' → prompt again…"></textarea>
       </label>
-      <label class="field">Pro tier — AI system prompt <span class="tier pro">Pro · AI</span>
-        <small>persona &amp; rules for the real-AI camarero (Responsible Human–AI Collaboration)</small>
+      <label class="field"><span class="lang-en">Pro tier — AI system prompt</span><span class="lang-es">Nivel Pro — system prompt de IA</span> <span class="tier pro"><span class="lang-en">Pro · AI</span><span class="lang-es">Pro · IA</span></span>
+        <small><span class="lang-en">persona &amp; rules for the real-AI camarero (Responsible Human–AI Collaboration)</span><span class="lang-es">personaje y reglas del camarero con IA real (colaboración humano–IA responsable)</span></small>
         <textarea data-field="m_proPrompt" placeholder="You are a friendly camarero in a Barcelona tapas bar. Speak simple A2 Spanish. Only serve when the learner orders politely…"></textarea>
       </label>
-      <label class="field">Success criteria
+      <label class="field"><span class="lang-en">Success criteria</span><span class="lang-es">Criterio de logro</span>
         <input data-field="m_success" placeholder="Full order placed + polite register + energy &gt; 0">
       </label>
     </div>
-    <h3 style="font-size:14px;color:var(--amber-d);margin:18px 0 2px">Mentor hints</h3>
+    <h3 style="font-size:14px;color:var(--amber-d);margin:18px 0 2px"><span class="lang-en">Mentor hints</span><span class="lang-es">Pistas del mentor</span></h3>
     <div class="rows" data-list="hints"></div>
-    <button class="add" onclick="addRow('hints')">+ Add hint</button>
+    <button class="add" onclick="addRow('hints')"><span class="lang-en">+ Add hint</span><span class="lang-es">+ Añadir pista</span></button>
   </section>
 
   <!-- 10. Reflection -->
   <section class="card">
-    <h2><span class="n">10</span> Reflection — choose your skill</h2>
-    <p class="tie">IPO Output / REACT Transferring — <b class="who">Casañ-Pitarch; CORD–Crawford, 2001</b> · learner picks ORAL or WRITTEN to deploy the language in a new context</p>
-    <h3 style="font-size:14px;color:var(--amber-d);margin:6px 0 2px">Oral prompts <small style="font-weight:400;color:var(--muted)">(recorded via speech recognition)</small></h3>
+    <h2><span class="n">10</span> <span class="lang-en">Reflection — choose your skill</span><span class="lang-es">Reflexión — elige tu destreza</span></h2>
+    <p class="tie">IPO Output / REACT Transferring — <b class="who">Casañ-Pitarch; CORD–Crawford, 2001</b> · <span class="lang-en">learner picks ORAL or WRITTEN to deploy the language in a new context</span><span class="lang-es">el alumno elige ORAL o ESCRITA para desplegar la lengua en un contexto nuevo</span></p>
+    <h3 style="font-size:14px;color:var(--amber-d);margin:6px 0 2px"><span class="lang-en">Oral prompts</span><span class="lang-es">Consignas orales</span> <small style="font-weight:400;color:var(--muted)"><span class="lang-en">(recorded via speech recognition)</span><span class="lang-es">(grabadas por reconocimiento de voz)</span></small></h3>
     <div class="rows" data-list="oral"></div>
-    <button class="add" onclick="addRow('oral')">+ Add oral prompt</button>
+    <button class="add" onclick="addRow('oral')"><span class="lang-en">+ Add oral prompt</span><span class="lang-es">+ Añadir consigna oral</span></button>
 
     <div class="grid" style="margin-top:18px">
-      <label class="field">Written prompt
+      <label class="field"><span class="lang-en">Written prompt</span><span class="lang-es">Consigna escrita</span>
         <input data-field="r_written" placeholder="Write a postcard to a friend about your tapas adventure">
       </label>
-      <label class="field">Rubric — what a good response includes
+      <label class="field"><span class="lang-en">Rubric — what a good response includes</span><span class="lang-es">Rúbrica — qué incluye una buena respuesta</span>
         <input data-field="r_rubric" placeholder="Uses ≥3 target words · ≥3 sentences · past tense attempt">
       </label>
     </div>
@@ -411,48 +428,65 @@
 
   <!-- 11. Culture & pragmatics cards -->
   <section class="card">
-    <h2><span class="n">11</span> Culture &amp; pragmatics cards <span style="font-weight:400;font-size:14px;color:var(--muted)">— ¿Sabías que…?</span></h2>
-    <p class="tie">CLIL Culture <b class="who">(Coyle)</b> + pragmatic competence <b class="who">(Kasper &amp; Rose, 2001)</b> · the lesson ends here (as the original De Tapas did) — teach <b>art , food , culture , curiosidad </b> and <b>pragmática </b> about the place (read aloud on tap).</p>
+    <h2><span class="n">11</span> <span class="lang-en">Culture &amp; pragmatics cards</span><span class="lang-es">Tarjetas de cultura y pragmática</span> <span style="font-weight:400;font-size:14px;color:var(--muted)">— ¿Sabías que…?</span></h2>
+    <p class="tie">CLIL Culture <b class="who">(Coyle)</b> + <span class="lang-en">pragmatic competence <b class="who">(Kasper &amp; Rose, 2001)</b> · the lesson ends here (as the original De Tapas did) — teach <b>art, food, culture, curiosidad</b> and <b>pragmática</b> about the place (read aloud on tap).</span><span class="lang-es">competencia pragmática <b class="who">(Kasper &amp; Rose, 2001)</b> · la lección termina aquí (como la De Tapas original) — enseña <b>arte, comida, cultura, curiosidad</b> y <b>pragmática</b> sobre el lugar (leída en voz alta al tocar).</span></p>
     <div class="rows" data-list="culture"></div>
-    <button class="add" onclick="addRow('culture')">+ Add culture / pragmatics card</button>
+    <button class="add" onclick="addRow('culture')"><span class="lang-en">+ Add culture / pragmatics card</span><span class="lang-es">+ Añadir tarjeta de cultura / pragmática</span></button>
   </section>
 
   <!-- 12. Rewards -->
   <section class="card">
-    <h2><span class="n">12</span> Rewards &amp; economy</h2>
-    <p class="tie">G-CLIL Ring 4 — <b class="who">Casañ-Pitarch, 2017</b> · every mechanic ties back to a learning aim</p>
+    <h2><span class="n">12</span> <span class="lang-en">Rewards &amp; economy</span><span class="lang-es">Recompensas y economía</span></h2>
+    <p class="tie">G-CLIL Ring 4 — <b class="who">Casañ-Pitarch, 2017</b> · <span class="lang-en">every mechanic ties back to a learning aim</span><span class="lang-es">cada mecánica remite a un objetivo de aprendizaje</span></p>
     <div class="grid g2">
-      <label class="field">Coins earned this lesson <input data-field="rw_coins" type="number" placeholder="50"></label>
-      <label class="field">Passport stamp label / emoji <input data-field="rw_stamp" placeholder="Barcelona ✓"></label>
+      <label class="field"><span class="lang-en">Coins earned this lesson</span><span class="lang-es">Monedas ganadas en esta lección</span> <input data-field="rw_coins" type="number" placeholder="50"></label>
+      <label class="field"><span class="lang-en">Passport stamp label / emoji</span><span class="lang-es">Etiqueta / emoji del sello del pasaporte</span> <input data-field="rw_stamp" placeholder="Barcelona ✓"></label>
     </div>
     <div class="grid g3" style="margin-top:14px">
-      <label class="field">Souvenir name <input data-field="rw_souvenir" placeholder="Miró-mosaic tile"></label>
-      <label class="field">Souvenir emoji / image <input data-field="rw_souvenirImg" placeholder=""></label>
-      <label class="field">Souvenir coin cost <input data-field="rw_souvenirCost" type="number" placeholder="30"></label>
+      <label class="field"><span class="lang-en">Souvenir name</span><span class="lang-es">Nombre del souvenir</span> <input data-field="rw_souvenir" placeholder="Miró-mosaic tile"></label>
+      <label class="field"><span class="lang-en">Souvenir emoji / image</span><span class="lang-es">Emoji / imagen del souvenir</span> <input data-field="rw_souvenirImg" placeholder=""></label>
+      <label class="field"><span class="lang-en">Souvenir coin cost</span><span class="lang-es">Coste en monedas del souvenir</span> <input data-field="rw_souvenirCost" type="number" placeholder="30"></label>
     </div>
     <div class="grid g2" style="margin-top:14px">
-      <label class="field">Next flight — destination <input data-field="rw_nextDest" placeholder="Roma (locked · próximamente)"></label>
-      <label class="field">Flight ticket cost <input data-field="rw_flightCost" type="number" placeholder="40"></label>
+      <label class="field"><span class="lang-en">Next flight — destination</span><span class="lang-es">Próximo vuelo — destino</span> <input data-field="rw_nextDest" placeholder="Roma (locked · próximamente)"></label>
+      <label class="field"><span class="lang-en">Flight ticket cost</span><span class="lang-es">Coste del billete de vuelo</span> <input data-field="rw_flightCost" type="number" placeholder="40"></label>
     </div>
   </section>
 
   <footer>
-    Mobile Language Learning Design Environment (MLLDE) · Design Worksheet · self-contained &amp;
-    offline · mirrors the blueprint Destination Schema<br>
-    2026 Ana Eslava-Graterol (ProfeAnaEslavaEdTech). All Rights Reserved. ·
-    Proprietary — see LICENSE · “Language Passport”is one lesson of this Curriculum<br>
-    <span style="font-size:11px">Referenced pedagogical frameworks their respective authors — see the attributions panel.</span>
+    <span class="lang-en">Mobile Language Learning Design Environment (MLLDE) · Design Worksheet · self-contained &amp;
+    offline · mirrors the blueprint Destination Schema</span><span class="lang-es">Mobile Language Learning Design Environment (MLLDE) · Ficha de diseño · autónoma y
+    sin conexión · refleja el Destination Schema del blueprint</span><br>
+    2026 Ana Eslava-Graterol (ProfeAnaEslavaEdTech). <span class="lang-en">All Rights Reserved. ·
+    Proprietary — see LICENSE · “Language Passport” is one lesson of this Curriculum</span><span class="lang-es">Todos los derechos reservados. ·
+    Propietario — véase LICENSE · “Language Passport” es una lección de este currículo</span><br>
+    <span style="font-size:11px"><span class="lang-en">Referenced pedagogical frameworks remain their respective authors — see the attributions panel.</span><span class="lang-es">Los marcos pedagógicos referenciados siguen siendo de sus respectivos autores — véase el panel de atribuciones.</span></span>
   </footer>
 </div>
 
 <script>
+  // ---- Language (EN / ES) ----
+  const LKEY="lp-lessonbuilder-lang";
+  function curLang(){ return document.documentElement.getAttribute("data-lang")==="es" ? "es":"en"; }
+  function renderThemeBtn(){
+    const b=document.getElementById("themeBtn"); if(!b) return;
+    const dark=document.documentElement.getAttribute("data-theme")==="dark";
+    const L={en:{dark:"Dark",light:"Light"},es:{dark:"Oscuro",light:"Claro"}}[curLang()];
+    b.textContent = dark ? L.light : L.dark;
+  }
+  function applyLang(l){
+    document.documentElement.setAttribute("data-lang", l);
+    document.documentElement.setAttribute("lang", l);
+    renderThemeBtn(); try{localStorage.setItem(LKEY,l);}catch(e){}
+  }
+  function toggleLang(){ applyLang(curLang()==="es" ? "en":"es"); relabelRows(); updateDurGuide(); }
+  (function initLang(){ let l; try{l=localStorage.getItem(LKEY);}catch(e){} applyLang(l==="es" ? "es":"en"); })();
+
   // ---- Theme (light / dark) — matches the Data Book ----
   const TKEY="lp-worksheet-theme";
   function applyTheme(t){
     document.documentElement.setAttribute("data-theme", t);
-    const b=document.getElementById("themeBtn");
-    if(b) b.textContent = (t==="dark") ? "Light" : "Dark";
-    try{localStorage.setItem(TKEY,t);}catch(e){}
+    renderThemeBtn(); try{localStorage.setItem(TKEY,t);}catch(e){}
   }
   function toggleTheme(){
     const cur = document.documentElement.getAttribute("data-theme")==="dark" ? "dark":"light";
@@ -466,13 +500,21 @@
 
   // ---- Lesson-length guidance ----
   const DUR = {
-    "5":  "<b>5 min · Microlearning.</b> One IPO cycle. ~4–6 vocab · 1–2 chunks · short model dialogue · 1 quick mission · 1 reflection prompt · 1–2 culture/pragmatics cards.",
-    "10": "<b>10 min.</b> ~6–10 vocab · 3–4 chunks · fuller dialogue · gap-fill + drag-match · 1 mission · oral <i>and</i> written reflection · 3–4 culture cards across categories.",
-    "15": "<b>15 min · Extended.</b> ~10–14 vocab · 5–6 chunks · extended dialogue · more drills · a two-step mission · full reflection · 4–6 culture/pragmatics cards spanning art · food · culture · curiosidad + a pragmatics focus."
+    en:{
+      "5":  "<b>5 min · Microlearning.</b> One IPO cycle. ~4–6 vocab · 1–2 chunks · short model dialogue · 1 quick mission · 1 reflection prompt · 1–2 culture/pragmatics cards.",
+      "10": "<b>10 min.</b> ~6–10 vocab · 3–4 chunks · fuller dialogue · gap-fill + drag-match · 1 mission · oral <i>and</i> written reflection · 3–4 culture cards across categories.",
+      "15": "<b>15 min · Extended.</b> ~10–14 vocab · 5–6 chunks · extended dialogue · more drills · a two-step mission · full reflection · 4–6 culture/pragmatics cards spanning art · food · culture · curiosidad + a pragmatics focus."
+    },
+    es:{
+      "5":  "<b>5 min · Microlearning.</b> Un ciclo IPO. ~4–6 palabras · 1–2 chunks · diálogo modelo breve · 1 misión rápida · 1 consigna de reflexión · 1–2 tarjetas de cultura/pragmática.",
+      "10": "<b>10 min.</b> ~6–10 palabras · 3–4 chunks · diálogo más completo · rellenar huecos + emparejar · 1 misión · reflexión oral <i>y</i> escrita · 3–4 tarjetas de cultura de varias categorías.",
+      "15": "<b>15 min · Ampliada.</b> ~10–14 palabras · 5–6 chunks · diálogo extendido · más ejercicios · una misión de dos pasos · reflexión completa · 4–6 tarjetas de cultura/pragmática que abarquen arte · comida · cultura · curiosidad + un foco de pragmática."
+    }
   };
   function updateDurGuide(){
     const v = document.getElementById("duration").value;
-    document.getElementById("durGuide").innerHTML = DUR[v] || "";
+    const set = DUR[curLang()] || DUR.en;
+    document.getElementById("durGuide").innerHTML = set[v] || "";
     autosave();
   }
 
@@ -480,41 +522,41 @@
   const ANIMS = ["popIn","slideUp","flip","bounce","zoom"];
   const LISTS = {
     vocab: [
-      {k:"term", ph:"las patatas bravas", w:"1.3fr", label:"Word / phrase"},
-      {k:"translation", ph:"spicy potatoes", w:"1.3fr", label:"Translation"},
-      {k:"image", ph:"or emoji/name", w:".9fr", label:"Image (emoji)"},
-      {k:"anim", ph:"", w:"1fr", label:"Animation", opts:ANIMS}
+      {k:"term", ph:"las patatas bravas", w:"1.3fr", label:"Word / phrase", le:"Palabra / frase"},
+      {k:"translation", ph:"spicy potatoes", w:"1.3fr", label:"Translation", le:"Traducción"},
+      {k:"image", ph:"or emoji/name", w:".9fr", label:"Image (emoji)", le:"Imagen (emoji)"},
+      {k:"anim", ph:"", w:"1fr", label:"Animation", le:"Animación", opts:ANIMS}
     ],
     chunks: [
-      {k:"chunk", ph:"¿me pone…?", w:"1.2fr", label:"Chunk / expression"},
-      {k:"meaning", ph:"could I have…?", w:"1.5fr", label:"Meaning"},
-      {k:"func", ph:"requesting politely", w:"1.1fr", label:"Pragmatic function"},
-      {k:"image", ph:"", w:".6fr", label:"Emoji"},
+      {k:"chunk", ph:"¿me pone…?", w:"1.2fr", label:"Chunk / expression", le:"Chunk / expresión"},
+      {k:"meaning", ph:"could I have…?", w:"1.5fr", label:"Meaning", le:"Significado"},
+      {k:"func", ph:"requesting politely", w:"1.1fr", label:"Pragmatic function", le:"Función pragmática"},
+      {k:"image", ph:"", w:".6fr", label:"Emoji", le:"Emoji"},
       {k:"anim", ph:"", w:"1fr", label:"Animation", opts:ANIMS}
     ],
     dialogue: [
-      {k:"speaker", ph:"Camarero / Cliente", w:".8fr", label:"Speaker"},
-      {k:"text", ph:"¡Buenas tardes! ¿Qué os pongo?", w:"2.5fr", label:"Line"}
+      {k:"speaker", ph:"Camarero / Cliente", w:".8fr", label:"Speaker", le:"Interlocutor"},
+      {k:"text", ph:"¡Buenas tardes! ¿Qué os pongo?", w:"2.5fr", label:"Line", le:"Línea"}
     ],
     gapfill: [
-      {k:"sentence", ph:"¿Qué os ___?", w:"2fr", label:"Sentence (use ___)"},
-      {k:"answer", ph:"pongo", w:"1fr", label:"Answer"}
+      {k:"sentence", ph:"¿Qué os ___?", w:"2fr", label:"Sentence (use ___)", le:"Frase (usa ___)"},
+      {k:"answer", ph:"pongo", w:"1fr", label:"Answer", le:"Respuesta"}
     ],
     dragmatch: [
-      {k:"term", ph:"los pinchos", w:"1fr", label:"Term"},
-      {k:"target", ph:"bar snacks", w:"1fr", label:"Matches with"}
+      {k:"term", ph:"los pinchos", w:"1fr", label:"Term", le:"Término"},
+      {k:"target", ph:"bar snacks", w:"1fr", label:"Matches with", le:"Empareja con"}
     ],
     hints: [
-      {k:"hint", ph:"Try starting with “Hola, buenas tardes…”", w:"1fr", label:"Hint"}
+      {k:"hint", ph:"Try starting with “Hola, buenas tardes…”", w:"1fr", label:"Hint", le:"Pista"}
     ],
     oral: [
-      {k:"prompt", ph:"Record a 1-min travel vlog: how was your day in Barcelona?", w:"1fr", label:"Oral prompt"}
+      {k:"prompt", ph:"Record a 1-min travel vlog: how was your day in Barcelona?", w:"1fr", label:"Oral prompt", le:"Consigna oral"}
     ],
     culture: [
-      {k:"category", ph:"", w:"1fr", label:"Category", opts:["Art","Food","Culture","Curiosidad","Pragmática"]},
-      {k:"icon", ph:"", w:".5fr", label:"Icon"},
-      {k:"title", ph:"1.2 km de historia", w:"1.2fr", label:"Title"},
-      {k:"fact", ph:"La Rambla runs 1.2 km from Plaça de Catalunya to the port…", w:"2.3fr", label:"Fact / what it teaches"}
+      {k:"category", ph:"", w:"1fr", label:"Category", le:"Categoría", opts:["Art","Food","Culture","Curiosidad","Pragmática"]},
+      {k:"icon", ph:"", w:".5fr", label:"Icon", le:"Icono"},
+      {k:"title", ph:"1.2 km de historia", w:"1.2fr", label:"Title", le:"Título"},
+      {k:"fact", ph:"La Rambla runs 1.2 km from Plaça de Catalunya to the port…", w:"2.3fr", label:"Fact / what it teaches", le:"Dato / qué enseña"}
     ]
   };
   const PURPLE = new Set(["culture"]);
@@ -529,7 +571,8 @@
     cols.forEach(c=>{
       const lab = document.createElement("label");
       lab.className = "field";
-      lab.textContent = c.label;
+      lab.setAttribute("data-lcol", c.k);
+      lab.textContent = (curLang()==="es" && c.le) ? c.le : c.label;
       let inp;
       if(c.opts){
         inp = document.createElement("select");
@@ -546,7 +589,7 @@
       row.appendChild(lab);
     });
     const rm = document.createElement("button");
-    rm.className="rm"; rm.type="button"; rm.title="Remove"; rm.textContent="×";
+    rm.className="rm"; rm.type="button"; rm.title=(curLang()==="es"?"Quitar":"Remove"); rm.textContent="×";
     rm.onclick=()=>{row.remove();autosave();};
     row.appendChild(rm);
     row.addEventListener("input", autosave);
@@ -555,6 +598,19 @@
   function addRow(list, values){
     document.querySelector(`[data-list="${list}"]`).appendChild(makeRow(list, values));
     autosave();
+  }
+  function relabelRows(){
+    const es = curLang()==="es";
+    document.querySelectorAll('.rows[data-list]').forEach(container=>{
+      const cols = LISTS[container.getAttribute('data-list')]; if(!cols) return;
+      const byK = {}; cols.forEach(c=>byK[c.k]=c);
+      container.querySelectorAll('label.field[data-lcol]').forEach(lab=>{
+        const c = byK[lab.getAttribute('data-lcol')]; if(!c) return;
+        const txt = (es && c.le) ? c.le : c.label;
+        if(lab.firstChild && lab.firstChild.nodeType===3) lab.firstChild.nodeValue = txt;
+        else lab.insertBefore(document.createTextNode(txt), lab.firstChild);
+      });
+    });
   }
 
   // ---- Serialize / deserialize ----
@@ -597,12 +653,12 @@
   function loadJSON(ev){
     const f=ev.target.files[0]; if(!f) return;
     const r=new FileReader();
-    r.onload=()=>{ try{apply(JSON.parse(r.result));autosave();}catch(e){alert("Could not read that file: "+e.message);} };
+    r.onload=()=>{ try{apply(JSON.parse(r.result));autosave();}catch(e){alert((curLang()==="es"?"No se pudo leer ese archivo: ":"Could not read that file: ")+e.message);} };
     r.readAsText(f);
     ev.target.value="";
   }
   function clearAll(){
-    if(!confirm("Clear the whole worksheet? (Save first if you want to keep it.)")) return;
+    if(!confirm(curLang()==="es"?"¿Borrar toda la ficha? (Guarda primero si quieres conservarla.)":"Clear the whole worksheet? (Save first if you want to keep it.)")) return;
     localStorage.removeItem(KEY);
     document.querySelectorAll("[data-field]").forEach(el=>{ if(el.tagName==="SELECT") el.selectedIndex=0; else el.value=""; });
     Object.keys(LISTS).forEach(list=>{ const c=document.querySelector(`[data-list="${list}"]`); c.innerHTML=""; c.appendChild(makeRow(list)); });
