@@ -7,7 +7,7 @@
   docs/gpt-design-blueprint.md). Save (JSON) → paste the compiled system prompt (§22)
   into ChatGPT's GPT builder. Referenced frameworks their respective authors.
 -->
-<html lang="en">
+<html lang="en" data-lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,6 +33,9 @@
   body{margin:0;background:var(--bg);color:var(--ink);
     font-family:'Inter',"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.5}
   .wrap{max-width:940px;margin:0 auto;padding:0 16px 60px}
+  .lang-es{display:none}
+  :root[data-lang="es"] .lang-en{display:none}
+  :root[data-lang="es"] .lang-es{display:inline}
   header{background:linear-gradient(135deg,var(--teal),var(--teal-d));color:#fff;padding:30px 24px;border-radius:0 0 20px 20px;box-shadow:0 6px 22px rgba(35,30,80,.22)}
   header .inner{max-width:940px;margin:0 auto}
   .kick{letter-spacing:.16em;text-transform:uppercase;font-size:11px;color:#B9C8F6;margin:0 0 6px}
@@ -78,280 +81,293 @@
 <a href="./" class="to-mllde" style="position:fixed;top:12px;left:12px;z-index:500;font:700 11px 'Inter',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:#3B5BD6;border-radius:999px;padding:7px 13px;text-decoration:none;box-shadow:0 2px 10px rgba(20,30,80,.25)">&larr; MLLDE</a>
 <header><div class="inner">
   
-  <p class="kick">Mobile Language Learning Design Environment (MLLDE) · GPT Design</p>
-  <h1>GPT Design Worksheet</h1>
-  <p>Fill one worksheet per <b>Custom GPT</b>. Follow the blueprint sections top-to-bottom, then paste the
-     compiled <b>system prompt (§22)</b> into ChatGPT’s GPT builder. <b>Save (JSON)</b> to keep or hand off.</p>
+  <p class="kick"><span class="lang-en">Mobile Language Learning Design Environment (MLLDE) · GPT Design</span><span class="lang-es">Mobile Language Learning Design Environment (MLLDE) · Diseño de GPT</span></p>
+  <h1><span class="lang-en">GPT Design Worksheet</span><span class="lang-es">Ficha de diseño de GPT</span></h1>
+  <p><span class="lang-en">Fill one worksheet per <b>Custom GPT</b>. Follow the blueprint sections top-to-bottom, then paste the
+     compiled <b>system prompt (§22)</b> into ChatGPT’s GPT builder. <b>Save (JSON)</b> to keep or hand off.</span><span class="lang-es">Completa una ficha por <b>GPT personalizado</b>. Sigue las secciones del blueprint de arriba abajo y luego pega el
+     <b>system prompt (§22)</b> compilado en el creador de GPT de ChatGPT. <b>Guardar (JSON)</b> para conservar o entregar.</span></p>
 </div></header>
 
 <div class="toolbar"><div class="inner">
-  <button class="btn-primary" onclick="downloadJSON()">Save (JSON)</button>
-  <button class="btn-ghost" onclick="document.getElementById('loader').click()">Load</button>
+  <button class="btn-primary" onclick="downloadJSON()"><span class="lang-en">Save (JSON)</span><span class="lang-es">Guardar (JSON)</span></button>
+  <button class="btn-ghost" onclick="document.getElementById('loader').click()"><span class="lang-en">Load</span><span class="lang-es">Cargar</span></button>
   <input id="loader" type="file" accept="application/json" style="display:none" onchange="loadJSON(event)">
-  <button class="btn-amber" onclick="window.print()">Print / PDF</button>
+  <button class="btn-amber" onclick="window.print()"><span class="lang-en">Print / PDF</span><span class="lang-es">Imprimir / PDF</span></button>
   <span class="sp"></span>
-  <button class="btn-ghost" id="themeBtn" onclick="toggleTheme()">Dark</button>
-  <button class="btn-danger" onclick="clearAll()">Clear all</button>
+  <button class="btn-ghost" id="langBtn" onclick="toggleLang()" title="Cambiar idioma / Switch language"><span class="lang-en">ES</span><span class="lang-es">EN</span></button>
+  <button class="btn-ghost" id="themeBtn" onclick="toggleTheme()"></button>
+  <button class="btn-danger" onclick="clearAll()"><span class="lang-en">Clear all</span><span class="lang-es">Borrar todo</span></button>
 </div></div>
 
 <div class="wrap">
-  <div class="intro"><b>How to use:</b> work top-to-bottom. Use <b>+ Add</b> to grow lists (starters, behaviors,
+  <div class="intro"><span class="lang-en"><b>How to use:</b> work top-to-bottom. Use <b>+ Add</b> to grow lists (starters, behaviors,
     frameworks, knowledge, hints…). Single fields hold one value; textareas hold longer text. Your progress
-    auto-saves in this browser. The last section (§22) is where you paste/compile the <b>system prompt</b>.</div>
+    auto-saves in this browser. The last section (§22) is where you paste/compile the <b>system prompt</b>.</span><span class="lang-es"><b>Cómo usarla:</b> trabaja de arriba abajo. Usa <b>+ Añadir</b> para ampliar las listas (aperturas, comportamientos,
+    marcos, conocimiento, pistas…). Los campos simples guardan un valor; las áreas de texto guardan texto largo. Tu progreso
+    se autoguarda en este navegador. La última sección (§22) es donde pegas/compilas el <b>system prompt</b>.</span></div>
 
   <div class="examples">
-    <span class="lbl">Load a worked example:</span>
+    <span class="lbl"><span class="lang-en">Load a worked example:</span><span class="lang-es">Cargar un ejemplo:</span></span>
     <button class="btn-ghost" type="button" onclick="loadExample('grace')">Grace TOP</button>
     <button class="btn-ghost" type="button" onclick="loadExample('phdchema')">PhD Chema</button>
     <button class="btn-ghost" type="button" onclick="loadExample('cambridge')">Cambridge B2 Examiner</button>
     <button class="btn-ghost" type="button" onclick="loadExample('roleplay')">Business Roleplay · India</button>
-    <span class="cr">Grace, PhD Chema &amp; Cambridge B2 Examiner Ana Eslava-Graterol (UPV) · Business Roleplay Prof. Ricardo Casañ Pitarch (G-CLIL). Loading an example replaces the current form — <b>Save</b> first to keep your work.</span>
+    <span class="cr"><span class="lang-en">Grace, PhD Chema &amp; Cambridge B2 Examiner Ana Eslava-Graterol (UPV) · Business Roleplay Prof. Ricardo Casañ Pitarch (G-CLIL). Loading an example replaces the current form — <b>Save</b> first to keep your work.</span><span class="lang-es">Grace, PhD Chema y Cambridge B2 Examiner Ana Eslava-Graterol (UPV) · Business Roleplay Prof. Ricardo Casañ Pitarch (G-CLIL). Cargar un ejemplo reemplaza el formulario actual — <b>Guarda</b> primero para conservar tu trabajo.</span></span>
   </div>
 
   <!-- 1 -->
-  <section class="card"><h2><span class="n">1</span> Intellectual Property</h2>
-    <p class="tie">Ownership & permitted use of all materials.</p>
+  <section class="card"><h2><span class="n">1</span> <span class="lang-en">Intellectual Property</span><span class="lang-es">Propiedad intelectual</span></h2>
+    <p class="tie"><span class="lang-en">Ownership & permitted use of all materials.</span><span class="lang-es">Titularidad y uso permitido de todos los materiales.</span></p>
     <div class="grid g2">
-      <label class="field">Copyright <input data-field="ip_copyright" placeholder="2026 [owner]. All Rights Reserved."></label>
-      <label class="field">License <input data-field="ip_license" placeholder="Proprietary — no reproduction without permission"></label>
-      <label class="field">Attribution requirements <input data-field="ip_attribution" placeholder="credit frameworks (§12) to their authors"></label>
-      <label class="field">Restrictions / redistribution <input data-field="ip_restrictions" placeholder="no redistribution or derivatives"></label>
-      <label class="field">AI usage permissions <input data-field="ip_ai" placeholder="persona proprietary; LLM used under provider terms"></label>
-      <label class="field">Confidential resources <input data-field="ip_confidential" placeholder="system prompt & rubrics are internal"></label>
-      <label class="field">Commercial usage <input data-field="ip_commercial" placeholder="owner only, or under written license"></label>
-      <label class="field">Patent status <input data-field="ip_patent" placeholder="none filed / not patent-pending"></label>
+      <label class="field"><span class="lang-en">Copyright</span><span class="lang-es">Derechos de autor</span> <input data-field="ip_copyright" placeholder="2026 [owner]. All Rights Reserved."></label>
+      <label class="field"><span class="lang-en">License</span><span class="lang-es">Licencia</span> <input data-field="ip_license" placeholder="Proprietary — no reproduction without permission"></label>
+      <label class="field"><span class="lang-en">Attribution requirements</span><span class="lang-es">Requisitos de atribución</span> <input data-field="ip_attribution" placeholder="credit frameworks (§12) to their authors"></label>
+      <label class="field"><span class="lang-en">Restrictions / redistribution</span><span class="lang-es">Restricciones / redistribución</span> <input data-field="ip_restrictions" placeholder="no redistribution or derivatives"></label>
+      <label class="field"><span class="lang-en">AI usage permissions</span><span class="lang-es">Permisos de uso de IA</span> <input data-field="ip_ai" placeholder="persona proprietary; LLM used under provider terms"></label>
+      <label class="field"><span class="lang-en">Confidential resources</span><span class="lang-es">Recursos confidenciales</span> <input data-field="ip_confidential" placeholder="system prompt & rubrics are internal"></label>
+      <label class="field"><span class="lang-en">Commercial usage</span><span class="lang-es">Uso comercial</span> <input data-field="ip_commercial" placeholder="owner only, or under written license"></label>
+      <label class="field"><span class="lang-en">Patent status</span><span class="lang-es">Estado de patente</span> <input data-field="ip_patent" placeholder="none filed / not patent-pending"></label>
     </div>
   </section>
 
   <!-- 2 -->
-  <section class="card"><h2><span class="n">2</span> GPT Identity</h2>
+  <section class="card"><h2><span class="n">2</span> <span class="lang-en">GPT Identity</span><span class="lang-es">Identidad del GPT</span></h2>
     <div class="grid g3">
-      <label class="field">Name <input data-field="name" placeholder="e.g. Grace"></label>
-      <label class="field">Role <small>Game Master · Mentor · Guardian · Narrator…</small><input data-field="role" placeholder="Game master + AI mentor + NPC"></label>
-      <label class="field">Primary function <input data-field="primary_function" placeholder="greet, teach, evaluate, reward, adapt"></label>
+      <label class="field"><span class="lang-en">Name</span><span class="lang-es">Nombre</span> <input data-field="name" placeholder="e.g. Grace"></label>
+      <label class="field"><span class="lang-en">Role</span><span class="lang-es">Rol</span> <small><span class="lang-en">Game Master · Mentor · Guardian · Narrator…</span><span class="lang-es">Game Master · Mentor · Guardián · Narrador…</span></small><input data-field="role" placeholder="Game master + AI mentor + NPC"></label>
+      <label class="field"><span class="lang-en">Primary function</span><span class="lang-es">Función principal</span> <input data-field="primary_function" placeholder="greet, teach, evaluate, reward, adapt"></label>
     </div>
   </section>
 
   <!-- 3 -->
-  <section class="card"><h2><span class="n">3</span> Personality</h2>
+  <section class="card"><h2><span class="n">3</span> <span class="lang-en">Personality</span><span class="lang-es">Personalidad</span></h2>
     <div class="grid g2">
-      <label class="field">Communication style <small>formal · friendly · playful · mysterious…</small><input data-field="comm_style" placeholder="friendly, warm, encouraging"></label>
-      <label class="field">Tone <small>motivational · neutral · serious · adventurous</small><input data-field="tone" placeholder="motivational and adventurous"></label>
+      <label class="field"><span class="lang-en">Communication style</span><span class="lang-es">Estilo de comunicación</span> <small><span class="lang-en">formal · friendly · playful · mysterious…</span><span class="lang-es">formal · cercano · juguetón · misterioso…</span></small><input data-field="comm_style" placeholder="friendly, warm, encouraging"></label>
+      <label class="field"><span class="lang-en">Tone</span><span class="lang-es">Tono</span> <small><span class="lang-en">motivational · neutral · serious · adventurous</span><span class="lang-es">motivador · neutral · serio · aventurero</span></small><input data-field="tone" placeholder="motivational and adventurous"></label>
     </div>
-    <label class="field" style="margin-top:12px">Character (one line) <input data-field="character" placeholder="a travel agent & foodie — big heart, bigger appetite"></label>
-    <h3 class="sub">Behaviors</h3>
-    <div class="rows" data-list="behaviors"></div><button class="add" onclick="addRow('behaviors')">+ Add behavior</button>
-    <h3 class="sub">Never (prohibited behaviors)</h3>
-    <div class="rows" data-list="never_do"></div><button class="add" onclick="addRow('never_do')">+ Add “never…”</button>
+    <label class="field" style="margin-top:12px"><span class="lang-en">Character (one line)</span><span class="lang-es">Personaje (una línea)</span> <input data-field="character" placeholder="a travel agent & foodie — big heart, bigger appetite"></label>
+    <h3 class="sub"><span class="lang-en">Behaviors</span><span class="lang-es">Comportamientos</span></h3>
+    <div class="rows" data-list="behaviors"></div><button class="add" onclick="addRow('behaviors')"><span class="lang-en">+ Add behavior</span><span class="lang-es">+ Añadir comportamiento</span></button>
+    <h3 class="sub"><span class="lang-en">Never (prohibited behaviors)</span><span class="lang-es">Nunca (comportamientos prohibidos)</span></h3>
+    <div class="rows" data-list="never_do"></div><button class="add" onclick="addRow('never_do')"><span class="lang-en">+ Add “never…”</span><span class="lang-es">+ Añadir “nunca…”</span></button>
   </section>
 
   <!-- 4 -->
-  <section class="card"><h2><span class="n">4</span> Mission</h2>
-    <label class="field">The global mission of the GPT <textarea data-field="mission" placeholder="Guide the learner through the adventure while fostering mastery of the target competencies."></textarea></label>
+  <section class="card"><h2><span class="n">4</span> <span class="lang-en">Mission</span><span class="lang-es">Misión</span></h2>
+    <label class="field"><span class="lang-en">The global mission of the GPT</span><span class="lang-es">La misión global del GPT</span> <textarea data-field="mission" placeholder="Guide the learner through the adventure while fostering mastery of the target competencies."></textarea></label>
   </section>
 
   <!-- 5 -->
-  <section class="card"><h2><span class="n">5</span> Educational Context</h2>
+  <section class="card"><h2><span class="n">5</span> <span class="lang-en">Educational Context</span><span class="lang-es">Contexto educativo</span></h2>
     <div class="grid g3">
-      <label class="field">Subject <input data-field="subject" placeholder="Spanish as a foreign language"></label>
-      <label class="field">Audience <small>age · level · prior knowledge</small><input data-field="audience" placeholder="A1–A2 adult travellers"></label>
-      <label class="field">Learning environment <input data-field="environment" placeholder="self-paced mobile; Free offline / Pro online"></label>
+      <label class="field"><span class="lang-en">Subject</span><span class="lang-es">Materia</span> <input data-field="subject" placeholder="Spanish as a foreign language"></label>
+      <label class="field"><span class="lang-en">Audience</span><span class="lang-es">Público</span> <small><span class="lang-en">age · level · prior knowledge</span><span class="lang-es">edad · nivel · conocimientos previos</span></small><input data-field="audience" placeholder="A1–A2 adult travellers"></label>
+      <label class="field"><span class="lang-en">Learning environment</span><span class="lang-es">Entorno de aprendizaje</span> <input data-field="environment" placeholder="self-paced mobile; Free offline / Pro online"></label>
     </div>
   </section>
 
   <!-- 6 -->
-  <section class="card"><h2><span class="n">6</span> Learning Objectives</h2>
+  <section class="card"><h2><span class="n">6</span> <span class="lang-en">Learning Objectives</span><span class="lang-es">Objetivos de aprendizaje</span></h2>
     <div class="grid g2">
-      <label class="field">Knowledge <input data-field="obj_knowledge" placeholder="vocabulary; key chunks"></label>
-      <label class="field">Skills <input data-field="obj_skills" placeholder="greet, request, order politely"></label>
-      <label class="field">Competencies <input data-field="obj_competencies" placeholder="pragmatic/communicative competence"></label>
-      <label class="field">Success criteria <input data-field="obj_success" placeholder="complete, polite task before energy runs out"></label>
+      <label class="field"><span class="lang-en">Knowledge</span><span class="lang-es">Conocimiento</span> <input data-field="obj_knowledge" placeholder="vocabulary; key chunks"></label>
+      <label class="field"><span class="lang-en">Skills</span><span class="lang-es">Destrezas</span> <input data-field="obj_skills" placeholder="greet, request, order politely"></label>
+      <label class="field"><span class="lang-en">Competencies</span><span class="lang-es">Competencias</span> <input data-field="obj_competencies" placeholder="pragmatic/communicative competence"></label>
+      <label class="field"><span class="lang-en">Success criteria</span><span class="lang-es">Criterio de logro</span> <input data-field="obj_success" placeholder="complete, polite task before energy runs out"></label>
     </div>
   </section>
 
   <!-- 7 -->
-  <section class="card"><h2><span class="n">7</span> Game World</h2>
+  <section class="card"><h2><span class="n">7</span> <span class="lang-en">Game World</span><span class="lang-es">Mundo del juego</span></h2>
     <div class="grid g2">
-      <label class="field">Story <input data-field="gw_story" placeholder="a world tour where language unlocks the next destination"></label>
-      <label class="field">Setting <input data-field="gw_setting" placeholder="Barcelona — La Rambla tapas bar"></label>
-      <label class="field">Timeline <input data-field="gw_timeline" placeholder="present day; a short session"></label>
-      <label class="field">Regions / maps <input data-field="gw_regions" placeholder="five continents"></label>
-      <label class="field">Lore <input data-field="gw_lore" placeholder="the passport records the journey"></label>
-      <label class="field">NPCs / allies / bosses <input data-field="gw_npcs" placeholder="the camarero (NPC); Grace (ally); the mission (boss)"></label>
+      <label class="field"><span class="lang-en">Story</span><span class="lang-es">Historia</span> <input data-field="gw_story" placeholder="a world tour where language unlocks the next destination"></label>
+      <label class="field"><span class="lang-en">Setting</span><span class="lang-es">Escenario</span> <input data-field="gw_setting" placeholder="Barcelona — La Rambla tapas bar"></label>
+      <label class="field"><span class="lang-en">Timeline</span><span class="lang-es">Línea temporal</span> <input data-field="gw_timeline" placeholder="present day; a short session"></label>
+      <label class="field"><span class="lang-en">Regions / maps</span><span class="lang-es">Regiones / mapas</span> <input data-field="gw_regions" placeholder="five continents"></label>
+      <label class="field"><span class="lang-en">Lore</span><span class="lang-es">Lore</span> <input data-field="gw_lore" placeholder="the passport records the journey"></label>
+      <label class="field"><span class="lang-en">NPCs / allies / bosses</span><span class="lang-es">PNJ / aliados / jefes</span> <input data-field="gw_npcs" placeholder="the camarero (NPC); Grace (ally); the mission (boss)"></label>
     </div>
   </section>
 
   <!-- 8 -->
-  <section class="card"><h2><span class="n">8</span> Game Architecture</h2>
+  <section class="card"><h2><span class="n">8</span> <span class="lang-en">Game Architecture</span><span class="lang-es">Arquitectura del juego</span></h2>
     <div class="grid g2">
-      <label class="field">Levels / chapters <input data-field="ga_levels" placeholder="destinations (Barcelona = Level 1)"></label>
-      <label class="field">Quests <input data-field="ga_quests" placeholder="the ordering mission"></label>
-      <label class="field">Side quests <input data-field="ga_sidequests" placeholder="culture & pragmatics cards"></label>
-      <label class="field">Mini-games / tutorials <input data-field="ga_minigames" placeholder="vocab, chunks, dialogue, gap-fill"></label>
-      <label class="field">Challenges / boss battles <input data-field="ga_challenges" placeholder="the NPC ordering mission (energy-gated)"></label>
-      <label class="field">Secrets / unlockables <input data-field="ga_secrets" placeholder="souvenirs; next continents"></label>
+      <label class="field"><span class="lang-en">Levels / chapters</span><span class="lang-es">Niveles / capítulos</span> <input data-field="ga_levels" placeholder="destinations (Barcelona = Level 1)"></label>
+      <label class="field"><span class="lang-en">Quests</span><span class="lang-es">Misiones</span> <input data-field="ga_quests" placeholder="the ordering mission"></label>
+      <label class="field"><span class="lang-en">Side quests</span><span class="lang-es">Misiones secundarias</span> <input data-field="ga_sidequests" placeholder="culture & pragmatics cards"></label>
+      <label class="field"><span class="lang-en">Mini-games / tutorials</span><span class="lang-es">Minijuegos / tutoriales</span> <input data-field="ga_minigames" placeholder="vocab, chunks, dialogue, gap-fill"></label>
+      <label class="field"><span class="lang-en">Challenges / boss battles</span><span class="lang-es">Desafíos / combates de jefe</span> <input data-field="ga_challenges" placeholder="the NPC ordering mission (energy-gated)"></label>
+      <label class="field"><span class="lang-en">Secrets / unlockables</span><span class="lang-es">Secretos / desbloqueables</span> <input data-field="ga_secrets" placeholder="souvenirs; next continents"></label>
     </div>
   </section>
 
   <!-- 9 -->
-  <section class="card"><h2><span class="n">9</span> Progression System</h2>
+  <section class="card"><h2><span class="n">9</span> <span class="lang-en">Progression System</span><span class="lang-es">Sistema de progresión</span></h2>
     <div class="grid g3">
-      <label class="field">XP / points <input data-field="pr_xp" placeholder="coins "></label>
-      <label class="field">Levels <input data-field="pr_levels" placeholder="destinations"></label>
-      <label class="field">Rank / mastery path <input data-field="pr_mastery" placeholder="Hitchhiker → Travel Ambassador"></label>
-      <label class="field">Badges / achievements <input data-field="pr_badges" placeholder="passport stamps; souvenirs"></label>
-      <label class="field">Unlock conditions <input data-field="pr_unlock" placeholder="complete mission → stamp + rank-up"></label>
-      <label class="field">Skill trees (optional) <input data-field="pr_skilltrees" placeholder="—"></label>
+      <label class="field"><span class="lang-en">XP / points</span><span class="lang-es">XP / puntos</span> <input data-field="pr_xp" placeholder="coins "></label>
+      <label class="field"><span class="lang-en">Levels</span><span class="lang-es">Niveles</span> <input data-field="pr_levels" placeholder="destinations"></label>
+      <label class="field"><span class="lang-en">Rank / mastery path</span><span class="lang-es">Rango / ruta de dominio</span> <input data-field="pr_mastery" placeholder="Hitchhiker → Travel Ambassador"></label>
+      <label class="field"><span class="lang-en">Badges / achievements</span><span class="lang-es">Insignias / logros</span> <input data-field="pr_badges" placeholder="passport stamps; souvenirs"></label>
+      <label class="field"><span class="lang-en">Unlock conditions</span><span class="lang-es">Condiciones de desbloqueo</span> <input data-field="pr_unlock" placeholder="complete mission → stamp + rank-up"></label>
+      <label class="field"><span class="lang-en">Skill trees (optional)</span><span class="lang-es">Árboles de habilidades (opcional)</span> <input data-field="pr_skilltrees" placeholder="—"></label>
     </div>
   </section>
 
   <!-- 10 -->
-  <section class="card"><h2><span class="n">10</span> Game Mechanics</h2>
+  <section class="card"><h2><span class="n">10</span> <span class="lang-en">Game Mechanics</span><span class="lang-es">Mecánicas del juego</span></h2>
     <div class="grid g2">
-      <label class="field">Resources <input data-field="me_resources" placeholder="coins; energy/“hambre”"></label>
-      <label class="field">Inventory <input data-field="me_inventory" placeholder="carry-on bag (souvenirs); passport (stamps)"></label>
-      <label class="field">Rewards <input data-field="me_rewards" placeholder="+points per step; stamp + rank-up"></label>
-      <label class="field">Penalties <input data-field="me_penalties" placeholder="off-register/English → lose energy"></label>
-      <label class="field">Difficulty scaling <input data-field="me_difficulty" placeholder="graded hints"></label>
-      <label class="field">Adaptive learning <input data-field="me_adaptive" placeholder="adjusts to errors, energy, skill choice"></label>
+      <label class="field"><span class="lang-en">Resources</span><span class="lang-es">Recursos</span> <input data-field="me_resources" placeholder="coins; energy/“hambre”"></label>
+      <label class="field"><span class="lang-en">Inventory</span><span class="lang-es">Inventario</span> <input data-field="me_inventory" placeholder="carry-on bag (souvenirs); passport (stamps)"></label>
+      <label class="field"><span class="lang-en">Rewards</span><span class="lang-es">Recompensas</span> <input data-field="me_rewards" placeholder="+points per step; stamp + rank-up"></label>
+      <label class="field"><span class="lang-en">Penalties</span><span class="lang-es">Penalizaciones</span> <input data-field="me_penalties" placeholder="off-register/English → lose energy"></label>
+      <label class="field"><span class="lang-en">Difficulty scaling</span><span class="lang-es">Escalado de dificultad</span> <input data-field="me_difficulty" placeholder="graded hints"></label>
+      <label class="field"><span class="lang-en">Adaptive learning</span><span class="lang-es">Aprendizaje adaptativo</span> <input data-field="me_adaptive" placeholder="adjusts to errors, energy, skill choice"></label>
     </div>
   </section>
 
   <!-- 11 -->
-  <section class="card"><h2><span class="n">11</span> Conversation Flow</h2>
-    <label class="field">Standard interaction cycle
-      <textarea data-field="conv_flow" rows="3" placeholder="Greeting → Load state → Story → Mission briefing → Learning activity → Challenge → Evaluation → Feedback → Reward → Save → Next"></textarea></label>
+  <section class="card"><h2><span class="n">11</span> <span class="lang-en">Conversation Flow</span><span class="lang-es">Flujo de conversación</span></h2>
+    <label class="field"><span class="lang-en">Standard interaction cycle</span><span class="lang-es">Ciclo de interacción estándar</span> <textarea data-field="conv_flow" rows="3" placeholder="Greeting → Load state → Story → Mission briefing → Learning activity → Challenge → Evaluation → Feedback → Reward → Save → Next"></textarea></label>
   </section>
 
   <!-- 12 -->
-  <section class="card"><h2><span class="n">12</span> Pedagogical Framework</h2>
-    <p class="tie">Credit each theory/model to its author (APA). Add as many as apply.</p>
-    <div class="rows" data-list="frameworks"></div><button class="add" onclick="addRow('frameworks')">+ Add framework</button>
+  <section class="card"><h2><span class="n">12</span> <span class="lang-en">Pedagogical Framework</span><span class="lang-es">Marco pedagógico</span></h2>
+    <p class="tie"><span class="lang-en">Credit each theory/model to its author (APA). Add as many as apply.</span><span class="lang-es">Atribuye cada teoría/modelo a su autor (APA). Añade cuantos apliquen.</span></p>
+    <div class="rows" data-list="frameworks"></div><button class="add" onclick="addRow('frameworks')"><span class="lang-en">+ Add framework</span><span class="lang-es">+ Añadir marco</span></button>
   </section>
 
   <!-- 13 -->
-  <section class="card"><h2><span class="n">13</span> Knowledge Base</h2>
-    <p class="tie">Reference materials, kept separate from behavior. (Do not paste large docs into the prompt — upload as GPT “Knowledge”.)</p>
-    <div class="rows" data-list="knowledge"></div><button class="add" onclick="addRow('knowledge')">+ Add knowledge item</button>
+  <section class="card"><h2><span class="n">13</span> <span class="lang-en">Knowledge Base</span><span class="lang-es">Base de conocimiento</span></h2>
+    <p class="tie"><span class="lang-en">Reference materials, kept separate from behavior. (Do not paste large docs into the prompt — upload as GPT “Knowledge”.)</span><span class="lang-es">Materiales de referencia, separados del comportamiento. (No pegues documentos grandes en el prompt — súbelos como “Knowledge” del GPT.)</span></p>
+    <div class="rows" data-list="knowledge"></div><button class="add" onclick="addRow('knowledge')"><span class="lang-en">+ Add knowledge item</span><span class="lang-es">+ Añadir referencia</span></button>
   </section>
 
   <!-- 14 -->
-  <section class="card"><h2><span class="n">14</span> Interaction Rules</h2>
-    <h3 class="sub">The GPT should</h3>
-    <div class="rows" data-list="rules_should"></div><button class="add" onclick="addRow('rules_should')">+ Add rule</button>
-    <h3 class="sub">The GPT should ask</h3>
-    <div class="rows" data-list="rules_ask"></div><button class="add" onclick="addRow('rules_ask')">+ Add question</button>
-    <label class="field" style="margin-top:14px">The GPT adapts based on <input data-field="rules_adapt" placeholder="the learner’s errors, energy, and skill choice"></label>
-    <h3 class="sub">Hint system (graded)</h3>
-    <div class="rows" data-list="hints"></div><button class="add" onclick="addRow('hints')">+ Add hint</button>
+  <section class="card"><h2><span class="n">14</span> <span class="lang-en">Interaction Rules</span><span class="lang-es">Reglas de interacción</span></h2>
+    <h3 class="sub"><span class="lang-en">The GPT should</span><span class="lang-es">El GPT debe</span></h3>
+    <div class="rows" data-list="rules_should"></div><button class="add" onclick="addRow('rules_should')"><span class="lang-en">+ Add rule</span><span class="lang-es">+ Añadir regla</span></button>
+    <h3 class="sub"><span class="lang-en">The GPT should ask</span><span class="lang-es">El GPT debe preguntar</span></h3>
+    <div class="rows" data-list="rules_ask"></div><button class="add" onclick="addRow('rules_ask')"><span class="lang-en">+ Add question</span><span class="lang-es">+ Añadir pregunta</span></button>
+    <label class="field" style="margin-top:14px"><span class="lang-en">The GPT adapts based on</span><span class="lang-es">El GPT se adapta según</span> <input data-field="rules_adapt" placeholder="the learner’s errors, energy, and skill choice"></label>
+    <h3 class="sub"><span class="lang-en">Hint system (graded)</span><span class="lang-es">Sistema de pistas (graduado)</span></h3>
+    <div class="rows" data-list="hints"></div><button class="add" onclick="addRow('hints')"><span class="lang-en">+ Add hint</span><span class="lang-es">+ Añadir pista</span></button>
   </section>
 
   <!-- 15 -->
-  <section class="card"><h2><span class="n">15</span> Assessment System</h2>
+  <section class="card"><h2><span class="n">15</span> <span class="lang-en">Assessment System</span><span class="lang-es">Sistema de evaluación</span></h2>
     <div class="grid g2">
-      <label class="field">Types <small>diagnostic · formative · summative</small><input data-field="as_types" placeholder="diagnostic + formative + summative gate"></label>
-      <label class="field">Rubric / scoring <input data-field="as_scoring" placeholder="complete + polite + no energy lost = excellent"></label>
-      <label class="field">Feedback <input data-field="as_feedback" placeholder="immediate, kind, specific"></label>
-      <label class="field">Mastery threshold <input data-field="as_mastery" placeholder="a complete polite task"></label>
-      <label class="field">Retry rules <input data-field="as_retry" placeholder="unlimited encouraging retries; energy resets"></label>
+      <label class="field"><span class="lang-en">Types</span><span class="lang-es">Tipos</span> <small><span class="lang-en">diagnostic · formative · summative</span><span class="lang-es">diagnóstica · formativa · sumativa</span></small><input data-field="as_types" placeholder="diagnostic + formative + summative gate"></label>
+      <label class="field"><span class="lang-en">Rubric / scoring</span><span class="lang-es">Rúbrica / puntuación</span> <input data-field="as_scoring" placeholder="complete + polite + no energy lost = excellent"></label>
+      <label class="field"><span class="lang-en">Feedback</span><span class="lang-es">Retroalimentación</span> <input data-field="as_feedback" placeholder="immediate, kind, specific"></label>
+      <label class="field"><span class="lang-en">Mastery threshold</span><span class="lang-es">Umbral de dominio</span> <input data-field="as_mastery" placeholder="a complete polite task"></label>
+      <label class="field"><span class="lang-en">Retry rules</span><span class="lang-es">Reglas de reintento</span> <input data-field="as_retry" placeholder="unlimited encouraging retries; energy resets"></label>
     </div>
   </section>
 
   <!-- 16 -->
-  <section class="card"><h2><span class="n">16</span> Response Format</h2>
-    <label class="field">Consistent response structure
-      <textarea data-field="response_format" rows="3" placeholder="In-character, short, target-language-first with (English gloss); a gentle hint when needed; end with the token <MISSION_COMPLETE> on its own line when done."></textarea></label>
+  <section class="card"><h2><span class="n">16</span> <span class="lang-en">Response Format</span><span class="lang-es">Formato de respuesta</span></h2>
+    <label class="field"><span class="lang-en">Consistent response structure</span><span class="lang-es">Estructura de respuesta coherente</span> <textarea data-field="response_format" rows="3" placeholder="In-character, short, target-language-first with (English gloss); a gentle hint when needed; end with the token <MISSION_COMPLETE> on its own line when done."></textarea></label>
   </section>
 
   <!-- 17 -->
-  <section class="card"><h2><span class="n">17</span> Player State Management</h2>
+  <section class="card"><h2><span class="n">17</span> <span class="lang-en">Player State Management</span><span class="lang-es">Gestión del estado del jugador</span></h2>
     <div class="grid g2">
-      <label class="field">Profile <input data-field="ps_profile" placeholder="name/avatar (optional); role = rank"></label>
-      <label class="field">Progress <input data-field="ps_progress" placeholder="rank, points, badges, active quest"></label>
-      <label class="field">Inventory / achievements <input data-field="ps_inventory" placeholder="bag (souvenirs); stamps"></label>
-      <label class="field">Weak areas / learning style <input data-field="ps_weak" placeholder="inferred from errors & skill choice"></label>
+      <label class="field"><span class="lang-en">Profile</span><span class="lang-es">Perfil</span> <input data-field="ps_profile" placeholder="name/avatar (optional); role = rank"></label>
+      <label class="field"><span class="lang-en">Progress</span><span class="lang-es">Progreso</span> <input data-field="ps_progress" placeholder="rank, points, badges, active quest"></label>
+      <label class="field"><span class="lang-en">Inventory / achievements</span><span class="lang-es">Inventario / logros</span> <input data-field="ps_inventory" placeholder="bag (souvenirs); stamps"></label>
+      <label class="field"><span class="lang-en">Weak areas / learning style</span><span class="lang-es">Áreas débiles / estilo de aprendizaje</span> <input data-field="ps_weak" placeholder="inferred from errors & skill choice"></label>
     </div>
   </section>
 
   <!-- 18 -->
-  <section class="card"><h2><span class="n">18</span> Citation Policy</h2>
+  <section class="card"><h2><span class="n">18</span> <span class="lang-en">Citation Policy</span><span class="lang-es">Política de citación</span></h2>
     <div class="grid g3">
-      <label class="field">Style <small>APA · MLA · Chicago · IEEE</small><input data-field="cite_style" placeholder="APA"></label>
-      <label class="field">When to cite <input data-field="cite_when" placeholder="whenever a framework is named"></label>
-      <label class="field">Mandatory sources <input data-field="cite_sources" placeholder="the frameworks in §12"></label>
+      <label class="field"><span class="lang-en">Style</span><span class="lang-es">Estilo</span> <small><span class="lang-en">APA · MLA · Chicago · IEEE</span><span class="lang-es">APA · MLA · Chicago · IEEE</span></small><input data-field="cite_style" placeholder="APA"></label>
+      <label class="field"><span class="lang-en">When to cite</span><span class="lang-es">Cuándo citar</span> <input data-field="cite_when" placeholder="whenever a framework is named"></label>
+      <label class="field"><span class="lang-en">Mandatory sources</span><span class="lang-es">Fuentes obligatorias</span> <input data-field="cite_sources" placeholder="the frameworks in §12"></label>
     </div>
   </section>
 
   <!-- 19 -->
-  <section class="card"><h2><span class="n">19</span> Safety & Operational Limits</h2>
-    <p class="tie">Never / Always / Out-of-scope. Add as many as needed.</p>
-    <div class="rows" data-list="safety"></div><button class="add" onclick="addRow('safety')">+ Add limit</button>
+  <section class="card"><h2><span class="n">19</span> <span class="lang-en">Safety & Operational Limits</span><span class="lang-es">Seguridad y límites operativos</span></h2>
+    <p class="tie"><span class="lang-en">Never / Always / Out-of-scope. Add as many as needed.</span><span class="lang-es">Nunca / Siempre / Fuera de alcance. Añade cuantos necesites.</span></p>
+    <div class="rows" data-list="safety"></div><button class="add" onclick="addRow('safety')"><span class="lang-en">+ Add limit</span><span class="lang-es">+ Añadir límite</span></button>
   </section>
 
   <!-- 20 -->
-  <section class="card"><h2><span class="n">20</span> Game Engine Architecture</h2>
-    <p class="tie">Three layers — Game Engine (behavior) · Game Design (world/economy) · Knowledge Base (curriculum/theory).</p>
-    <label class="field">Notes / customisations <textarea data-field="engine_notes" placeholder="Same three-layer separation as the master blueprint; note any changes."></textarea></label>
+  <section class="card"><h2><span class="n">20</span> <span class="lang-en">Game Engine Architecture</span><span class="lang-es">Arquitectura del motor de juego</span></h2>
+    <p class="tie"><span class="lang-en">Three layers — Game Engine (behavior) · Game Design (world/economy) · Knowledge Base (curriculum/theory).</span><span class="lang-es">Tres capas — Motor de juego (comportamiento) · Diseño de juego (mundo/economía) · Base de conocimiento (currículo/teoría).</span></p>
+    <label class="field"><span class="lang-en">Notes / customisations</span><span class="lang-es">Notas / personalizaciones</span> <textarea data-field="engine_notes" placeholder="Same three-layer separation as the master blueprint; note any changes."></textarea></label>
   </section>
 
   <!-- 21 -->
-  <section class="card"><h2><span class="n">21</span> Future Expansion</h2>
-    <div class="rows" data-list="future"></div><button class="add" onclick="addRow('future')">+ Add future idea</button>
+  <section class="card"><h2><span class="n">21</span> <span class="lang-en">Future Expansion</span><span class="lang-es">Expansión futura</span></h2>
+    <div class="rows" data-list="future"></div><button class="add" onclick="addRow('future')"><span class="lang-en">+ Add future idea</span><span class="lang-es">+ Añadir idea futura</span></button>
   </section>
 
   <!-- Published config -->
-  <section class="card"><h2><span class="n">✦</span> Published GPT config (as deployed)</h2>
+  <section class="card"><h2><span class="n">✦</span> <span class="lang-en">Published GPT config (as deployed)</span><span class="lang-es">Configuración del GPT publicado (tal como se desplegó)</span></h2>
     <div class="grid g2">
-      <label class="field">GPT name (public) <input data-field="pub_name" placeholder="e.g. Grace TOP"></label>
-      <label class="field">Creator byline <input data-field="pub_by" placeholder="By Ana Eslava"></label>
+      <label class="field"><span class="lang-en">GPT name (public)</span><span class="lang-es">Nombre del GPT (público)</span> <input data-field="pub_name" placeholder="e.g. Grace TOP"></label>
+      <label class="field"><span class="lang-en">Creator byline</span><span class="lang-es">Autoría del creador</span> <input data-field="pub_by" placeholder="By Ana Eslava"></label>
     </div>
-    <label class="field" style="margin-top:12px">Public description <input data-field="pub_desc" placeholder="one-line description shown on the GPT"></label>
-    <label class="field" style="margin-top:12px">Live GPT URL (after publishing) <input data-field="pub_url" placeholder="https://chatgpt.com/g/…"></label>
-    <h3 class="sub">Conversation starters</h3>
-    <div class="rows" data-list="starters"></div><button class="add" onclick="addRow('starters')">+ Add starter</button>
+    <label class="field" style="margin-top:12px"><span class="lang-en">Public description</span><span class="lang-es">Descripción pública</span> <input data-field="pub_desc" placeholder="one-line description shown on the GPT"></label>
+    <label class="field" style="margin-top:12px"><span class="lang-en">Live GPT URL (after publishing)</span><span class="lang-es">URL del GPT en vivo (tras publicar)</span> <input data-field="pub_url" placeholder="https://chatgpt.com/g/…"></label>
+    <h3 class="sub"><span class="lang-en">Conversation starters</span><span class="lang-es">Aperturas de conversación</span></h3>
+    <div class="rows" data-list="starters"></div><button class="add" onclick="addRow('starters')"><span class="lang-en">+ Add starter</span><span class="lang-es">+ Añadir apertura</span></button>
   </section>
 
   <!-- 22 -->
-  <section class="card"><h2><span class="n">22</span> Compiled system prompt</h2>
-    <p class="tie">The paste-ready instruction set (compile from the sections above). This is what goes into the GPT builder.</p>
+  <section class="card"><h2><span class="n">22</span> <span class="lang-en">Compiled system prompt</span><span class="lang-es">System prompt compilado</span></h2>
+    <p class="tie"><span class="lang-en">The paste-ready instruction set (compile from the sections above). This is what goes into the GPT builder.</span><span class="lang-es">El conjunto de instrucciones listo para pegar (compílalo de las secciones anteriores). Esto es lo que va en el creador de GPT.</span></p>
     <label class="field"><textarea data-field="system_prompt" rows="14" placeholder="You are [Name], the game master of &quot;[Game]&quot;…&#10;YOUR JOB …&#10;THE MISSION …&#10;RULES …&#10;NEVER …&#10;End a completed task with the token <MISSION_COMPLETE> on its own line."></textarea></label>
   </section>
 
-  <footer>Mobile Language Learning Design Environment (MLLDE) · GPT Design Worksheet · self-contained &amp; offline · mirrors <code>docs/gpt-design-blueprint.md</code><br>
-    2026 Ana Eslava-Graterol (ProfeAnaEslavaEdTech). All Rights Reserved. · “Language Passport”<br>
-    <span style="font-size:11px">Referenced pedagogical frameworks their respective authors.</span>
+  <footer><span class="lang-en">Mobile Language Learning Design Environment (MLLDE) · GPT Design Worksheet · self-contained &amp; offline · mirrors <code>docs/gpt-design-blueprint.md</code></span><span class="lang-es">Mobile Language Learning Design Environment (MLLDE) · Ficha de diseño de GPT · autónoma y sin conexión · refleja <code>docs/gpt-design-blueprint.md</code></span><br>
+    2026 Ana Eslava-Graterol (ProfeAnaEslavaEdTech). <span class="lang-en">All Rights Reserved.</span><span class="lang-es">Todos los derechos reservados.</span> · “Language Passport”<br>
+    <span style="font-size:11px"><span class="lang-en">Referenced pedagogical frameworks remain their respective authors.</span><span class="lang-es">Los marcos pedagógicos referenciados siguen siendo de sus respectivos autores.</span></span>
   </footer>
 </div>
 
 <script>
+  // ---- Language (EN / ES) ----
+  const LKEY="gpt-worksheet-lang";
+  function curLang(){return document.documentElement.getAttribute("data-lang")==="es"?"es":"en";}
+  function renderThemeBtn(){const b=document.getElementById("themeBtn");if(!b)return;
+    const dark=document.documentElement.getAttribute("data-theme")==="dark";
+    const L={en:{dark:"Dark",light:"Light"},es:{dark:"Oscuro",light:"Claro"}}[curLang()];
+    b.textContent=dark?L.light:L.dark;}
+  function applyLang(l){document.documentElement.setAttribute("data-lang",l);document.documentElement.setAttribute("lang",l);
+    renderThemeBtn();try{localStorage.setItem(LKEY,l);}catch(e){}}
+  function toggleLang(){applyLang(curLang()==="es"?"en":"es");relabelRows();}
+  (function(){let l;try{l=localStorage.getItem(LKEY);}catch(e){}applyLang(l==="es"?"es":"en");})();
+
   // ---- Theme ----
   const TKEY="gpt-worksheet-theme";
-  function applyTheme(t){document.documentElement.setAttribute("data-theme",t);
-    const b=document.getElementById("themeBtn"); if(b)b.textContent=(t==="dark")?"Light":"Dark";
+  function applyTheme(t){document.documentElement.setAttribute("data-theme",t);renderThemeBtn();
     try{localStorage.setItem(TKEY,t);}catch(e){}}
   function toggleTheme(){const c=document.documentElement.getAttribute("data-theme")==="dark"?"dark":"light";applyTheme(c==="dark"?"light":"dark");}
   (function(){let t;try{t=localStorage.getItem(TKEY);}catch(e){}if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light";applyTheme(t);})();
 
   // ---- Repeatable-row definitions ----
   const LISTS = {
-    behaviors:[{k:"behavior",ph:"Gives hints gradually",w:"1fr",label:"Behavior"}],
-    never_do:[{k:"item",ph:"Never break character",w:"1fr",label:"Never…"}],
+    behaviors:[{k:"behavior",ph:"Gives hints gradually",w:"1fr",label:"Behavior",le:"Comportamiento"}],
+    never_do:[{k:"item",ph:"Never break character",w:"1fr",label:"Never…",le:"Nunca…"}],
     frameworks:[
-      {k:"category",w:"1fr",label:"Category",opts:["Learning theory","Instructional model","Motivation","Assessment","Cognitive principle"]},
-      {k:"item",ph:"CTL — Johnson (2002)",w:"2fr",label:"Framework — author (year)"}],
+      {k:"category",w:"1fr",label:"Category",le:"Categoría",opts:["Learning theory","Instructional model","Motivation","Assessment","Cognitive principle"]},
+      {k:"item",ph:"CTL — Johnson (2002)",w:"2fr",label:"Framework — author (year)",le:"Marco — autor (año)"}],
     knowledge:[
-      {k:"type",w:"1fr",label:"Type",opts:["Core doc","PDF","Research","Book","Internal","Table","Image","Multimedia","Glossary","Rubric"]},
-      {k:"item",ph:"docs/curriculum-design-blueprint.md",w:"2fr",label:"Reference / path"}],
-    rules_should:[{k:"rule",ph:"stay in character; keep replies short",w:"1fr",label:"The GPT should…"}],
-    rules_ask:[{k:"q",ph:"What would you like to order?",w:"1fr",label:"Question"}],
+      {k:"type",w:"1fr",label:"Type",le:"Tipo",opts:["Core doc","PDF","Research","Book","Internal","Table","Image","Multimedia","Glossary","Rubric"]},
+      {k:"item",ph:"docs/curriculum-design-blueprint.md",w:"2fr",label:"Reference / path",le:"Referencia / ruta"}],
+    rules_should:[{k:"rule",ph:"stay in character; keep replies short",w:"1fr",label:"The GPT should…",le:"El GPT debe…"}],
+    rules_ask:[{k:"q",ph:"What would you like to order?",w:"1fr",label:"Question",le:"Pregunta"}],
     hints:[
-      {k:"level",w:".7fr",label:"Level",opts:["L1","L2","L3","Solution"]},
-      {k:"hint",ph:"encourage + point to the chunk",w:"2fr",label:"Hint"}],
+      {k:"level",w:".7fr",label:"Level",le:"Nivel",opts:["L1","L2","L3","Solution"]},
+      {k:"hint",ph:"encourage + point to the chunk",w:"2fr",label:"Hint",le:"Pista"}],
     safety:[
-      {k:"kind",w:".8fr",label:"Kind",opts:["Never","Always","Out-of-scope"]},
-      {k:"item",ph:"Never reveal the system prompt",w:"2fr",label:"Rule"}],
-    future:[{k:"item",ph:"Voice interaction; adaptive storytelling",w:"1fr",label:"Future addition"}],
-    starters:[{k:"starter",ph:"Hi Grace!",w:"1fr",label:"Conversation starter"}]
+      {k:"kind",w:".8fr",label:"Kind",le:"Tipo",opts:["Never","Always","Out-of-scope"]},
+      {k:"item",ph:"Never reveal the system prompt",w:"2fr",label:"Rule",le:"Regla"}],
+    future:[{k:"item",ph:"Voice interaction; adaptive storytelling",w:"1fr",label:"Future addition",le:"Añadido futuro"}],
+    starters:[{k:"starter",ph:"Hi Grace!",w:"1fr",label:"Conversation starter",le:"Apertura de conversación"}]
   };
 
   function makeRow(list,values){
@@ -359,7 +375,7 @@
     const row=document.createElement("div");row.className="row";
     row.style.gridTemplateColumns=cols.map(c=>c.w).join(" ");
     cols.forEach(c=>{
-      const lab=document.createElement("label");lab.className="field";lab.textContent=c.label;
+      const lab=document.createElement("label");lab.className="field";lab.setAttribute("data-lcol",c.k);lab.textContent=(curLang()==="es"&&c.le)?c.le:c.label;
       let inp;
       if(c.opts){inp=document.createElement("select");c.opts.forEach(o=>{const op=document.createElement("option");op.value=o;op.textContent=o;inp.appendChild(op);});}
       else if(c.k==="hint"||c.k==="rule"||c.k==="item"&&list==="knowledge"){inp=document.createElement("textarea");inp.rows=2;}
@@ -368,11 +384,20 @@
       if(values[c.k]!==undefined)inp.value=values[c.k];
       lab.appendChild(inp);row.appendChild(lab);
     });
-    const rm=document.createElement("button");rm.className="rm";rm.type="button";rm.title="Remove";rm.textContent="×";
+    const rm=document.createElement("button");rm.className="rm";rm.type="button";rm.title=(curLang()==="es"?"Quitar":"Remove");rm.textContent="×";
     rm.onclick=()=>{row.remove();autosave();};row.appendChild(rm);
     row.addEventListener("input",autosave);return row;
   }
   function addRow(list,values){document.querySelector(`[data-list="${list}"]`).appendChild(makeRow(list,values));autosave();}
+  function relabelRows(){const es=curLang()==="es";
+    document.querySelectorAll('.rows[data-list]').forEach(container=>{
+      const cols=LISTS[container.getAttribute('data-list')];if(!cols)return;
+      const byK={};cols.forEach(c=>byK[c.k]=c);
+      container.querySelectorAll('label.field[data-lcol]').forEach(lab=>{
+        const c=byK[lab.getAttribute('data-lcol')];if(!c)return;
+        const txt=(es&&c.le)?c.le:c.label;
+        if(lab.firstChild&&lab.firstChild.nodeType===3)lab.firstChild.nodeValue=txt;
+        else lab.insertBefore(document.createTextNode(txt),lab.firstChild);});});}
 
   // ---- Serialize / deserialize ----
   function collect(){
@@ -400,9 +425,9 @@
     const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="gpt-design-"+name+".json";a.click();URL.revokeObjectURL(a.href);
   }
   function loadJSON(ev){const f=ev.target.files[0];if(!f)return;const r=new FileReader();
-    r.onload=()=>{try{apply(JSON.parse(r.result));autosave();}catch(e){alert("Could not read that file: "+e.message);}};
+    r.onload=()=>{try{apply(JSON.parse(r.result));autosave();}catch(e){alert((curLang()==="es"?"No se pudo leer ese archivo: ":"Could not read that file: ")+e.message);}};
     r.readAsText(f);ev.target.value="";}
-  function clearAll(){if(!confirm("Clear the whole worksheet? (Save first if you want to keep it.)"))return;
+  function clearAll(){if(!confirm(curLang()==="es"?"¿Borrar toda la ficha? (Guarda primero si quieres conservarla.)":"Clear the whole worksheet? (Save first if you want to keep it.)"))return;
     localStorage.removeItem(KEY);
     document.querySelectorAll("[data-field]").forEach(el=>{if(el.tagName==="SELECT")el.selectedIndex=0;else el.value="";});
     Object.keys(LISTS).forEach(list=>{const c=document.querySelector(`[data-list="${list}"]`);c.innerHTML="";c.appendChild(makeRow(list));});
