@@ -407,7 +407,7 @@
       {
         "iri": "https://w3id.org/mllde/verb/adapted",
         "label": "adapted",
-        "definition": "Actor is the teaching agent (human or AI): the learning path or assessment was adapted for the learner. Context carries the pedagogical-action IRI and the evidence that motivated it."
+        "definition": "The actor is the learner. The teaching agent (AI or human) adapted the learning path, or its answer, for the learner; an AI agent goes in context.instructor with its registry account (R-ID, governance norms v1.7). Context carries the pedagogical-action IRI and the evidence that motivated it."
       }
     ]
   },
