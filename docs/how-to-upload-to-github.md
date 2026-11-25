@@ -7,7 +7,7 @@ You will publish **two separate repositories** (a repository = one project folde
 
 | # | ZIP you were given | GitHub repository to create | What it becomes |
 |---|---|---|---|
-| 1 | `repo-MLLDE.zip` | `mobilelanguagelearningdesingenviroment` | The **MLLDE** methodology site: PhD proposal + the 3 authoring tools |
+| 1 | `repo-MLLDE.zip` | `mobilelanguagelearningdesingenviroment` | The **MLLDE** teaching-model site: PhD proposal + the 3 authoring tools |
 | 2 | `repo-LanguagePassport.zip` | `edtech-mobile-json-lessons` | The **Language Passport** app + the world map (father → continents → countries) |
 
 > 💡 **Tip:** do repository 1 completely, then repository 2. They are independent.

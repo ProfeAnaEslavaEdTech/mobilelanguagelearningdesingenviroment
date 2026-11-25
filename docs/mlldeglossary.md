@@ -1,7 +1,7 @@
 <!--
   © 2026 Ana Eslava-Graterol. All Rights Reserved.
   Brand & website: profeanaeslava · GitHub: profeanaeslavaedtech · Universitat Politècnica de València.
-  All information in this document forms part of a PhD proposal. MLLDE methodology;
+  All information in this document forms part of a PhD proposal. MLLDE teaching model;
   "Language Passport"™; "Grace". CEFR (Council of Europe), PCIC (Instituto Cervantes),
   xAPI (ADL/IEEE), ESCO (European Union) and IPA (International Phonetic Association)
   are cited standards, not redistributed.

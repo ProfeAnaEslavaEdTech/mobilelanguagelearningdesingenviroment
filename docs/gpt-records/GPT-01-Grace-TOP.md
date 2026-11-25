@@ -188,7 +188,7 @@ _This record documents original authorship of the design below. The complete, pa
 | Type | Item |
 |---|---|
 | Core doc | Destination schema (tapas/drinks vocabulary, chunks, mission) |
-| Core doc | docs/mllde-curriculum-master.md — CEFR-anchored method |
+| Core doc | docs/mllde-curriculum-master.md — CEFR-anchored teaching model |
 
 ## 14a · The GPT should
 

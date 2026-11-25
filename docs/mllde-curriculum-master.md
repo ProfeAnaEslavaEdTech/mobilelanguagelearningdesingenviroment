@@ -7,6 +7,9 @@
 -->
 
 # Mobile Language Learning Design Environment (MLLDE)
+
+> **Nota (25 nov 2026) · Note (25 Nov 2026).** MLLDE se denomina **modelo de enseñanza**, no método: un método necesita una base científica más amplia. Donde este documento dice «method» o «methodology» referido a MLLDE, léase «teaching model». En MLLDE, *measurement* no es puntuar ni poner nota: es comparar la producción del alumno con la base de conocimiento. El texto de esta versión se conserva como historial. · MLLDE is called a **teaching model**, not a method: a method needs a broader scientific basis. Where this document says “method” or “methodology” for MLLDE, read “teaching model”. In MLLDE, *measurement* does not mean scoring or grading: it means comparing the learner’s production with the knowledge base. This version’s text is kept as history.
+
 ## Curriculum Master Document
 
 > *The method behind Language Passport — CEFR-anchored, language-agnostic.*

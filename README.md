@@ -3,7 +3,7 @@
 **Author:** Ana Eslava-Graterol (ProfeAnaEslavaEdTech) · Universitat Politècnica de València
 **Repository:** `mobilelanguagelearningdesingenviroment`
 
-MLLDE is a replicable, **language-agnostic** methodology for building short, gamified
+MLLDE is a replicable, **language-agnostic** teaching model for building short, gamified
 mobile language lessons, anchored to the **CEFR** (Council of Europe). This repository
 holds the **PhD research line** and the **three authoring tools**. Its first product,
 **Language Passport** (Spanish), lives in a separate repository.
@@ -16,7 +16,7 @@ holds the **PhD research line** and the **three authoring tools**. Its first pro
 | File | What it is |
 |---|---|
 | `docs/MLLDE-PhD-Research-Proposal.pdf` | The **PhD research proposal** (also `docs/phd-proposal-mllde.md`). |
-| `docs/MLLDE-Curriculum-Master-Document.pdf` / `.docx` | The Curriculum Master Document — method, CEFR competence core, blueprint. |
+| `docs/MLLDE-Curriculum-Master-Document.pdf` / `.docx` | The Curriculum Master Document — teaching model, CEFR competence core, blueprint. |
 | `docs/theoretical-framework.md` | Frameworks + CEFR 4 modes · 3 communicative competences. |
 
 ### 2 · Authoring tools (self-contained, offline HTML)
@@ -40,7 +40,7 @@ holds the **PhD research line** and the **three authoring tools**. Its first pro
 ## How this relates to Language Passport
 
 ```
-mobilelanguagelearningdesingenviroment/   ← THIS repo — the methodology + tools
+mobilelanguagelearningdesingenviroment/   ← THIS repo — the teaching model + tools
   ├── docs/MLLDE-PhD-Research-Proposal.pdf     (PhD proposal)
   ├── curriculum-design-worksheet.html         (a) JSON curriculum maker
   ├── gpt-design-worksheet.html                (b) GPT maker
