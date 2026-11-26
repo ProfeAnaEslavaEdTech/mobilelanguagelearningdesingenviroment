@@ -62,6 +62,10 @@ linguist — can read it.
 
 ## 2. Learning-data standards (the "logbook" family)
 
+**Mobile-first.** Design conceived for the phone from the start. In MLLDE, the lessons, the interface and the way of interacting were designed for a learner who practises outside the classroom, in their own context, on their phone. It is not the same as *mobile native*: a native app is installed from the phone's app store. MLLDE is applied as a progressive web app (PWA), which runs in the phone's browser with nothing to install.
+
+**SLA (Second Language Acquisition).** The research field that studies how people learn a language other than their first. It is not a teaching method. MLLDE draws on its findings, for example Krashen's i+1 and correction through recasts. MLLDE does not replace the formal teaching of ESP (English for specific purposes) found in engineering schools and multidisciplinary universities: it extends it beyond the classroom, onto the phone, and links it to a record that can be audited.
+
 **LMS (Learning Management System).** The platform that hosts courses and users —
 Moodle, Chamilo, Canvas. The administrator persona of this project works here.
 
